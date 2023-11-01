@@ -17,17 +17,14 @@ ${PrimaryFonts}
 ${SecondaryFonts}
 
 :root {
-    --primary: #663a87;
-    --secondary: #74bf44;
-    --tertiary: #e5ede7;
-    --accent: #00625d;
-    --shadow: #4d5871;
-    --alt: #cecdda;
-    --greybrown: #707070;
-    --brown: #454545;
-    --black: #090b10;
-    --white: #f5f5f5;
-    --grey: #e3e1e2;
+    --primary: #96BCC5;
+    --secondary: #005848;
+    --tertiary: #333333;
+    --accent: #6C6D70;
+    --shadow: #96BCC5;
+    --black: #000;
+    --white: #fff;
+    --grey: #6C6D70;
   }
 
   *,

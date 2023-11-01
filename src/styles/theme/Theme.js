@@ -8,19 +8,9 @@ const {
   colorTertiary,
   colorAccent,
   colorShad,
-  colorAlt,
   white,
   grey,
-  greyMed,
-  greyBrown,
   black,
-  strongred,
-  open,
-  fulfilled,
-  unfulfilled,
-  cancelled,
-  shortcancelled,
-  error,
 } = themeColors
 const { maxWidth, bpTablet, bpDesksm, bpDeskmd, bpDesklg, bpMax } = themeSize
 const { fontPrimary, fontSecondary, fontAwesome, baseLineHeight } = themeFonts
@@ -31,13 +21,9 @@ const theme = {
   colorTertiary,
   colorAccent,
   colorShad,
-  colorAlt,
   white,
   grey,
-  greyMed,
-  greyBrown,
   black,
-  strongred,
   maxWidth,
   bpTablet,
   bpDesksm,
@@ -48,12 +34,6 @@ const theme = {
   fontSecondary,
   fontAwesome,
   baseLineHeight,
-  open,
-  fulfilled,
-  unfulfilled,
-  cancelled,
-  shortcancelled,
-  error,
 }
 
 export default theme
