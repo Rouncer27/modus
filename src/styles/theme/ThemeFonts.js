@@ -1,6 +1,6 @@
 const themeFonts = {
-  fontPrimary: "Roboto",
-  fontSecondary: "Roboto Slab",
+  fontPrimary: "Montserrat",
+  fontSecondary: "Montserrat",
   fontAwesome: "FontAwesome",
   baseLineHeight: "1.5",
 }

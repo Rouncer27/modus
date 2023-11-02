@@ -1,3 +1,4 @@
+import { css } from "styled-components"
 import themeFonts from "../theme/ThemeFonts"
 
 export const fontPrimary = themeFonts.fontPrimary
@@ -12,19 +13,19 @@ export const fontSizer = (
   maxScreen = 110,
   mobileFont = 1.8
 ) => {
-  return `
-  font-size: calc(${mobileFont} * 1rem);
+  return css`
+    font-size: calc(${mobileFont} * 1rem);
 
-  @media (min-width: calc(${minScreen} * 10px)) {
-    font-size: calc(
-      (${minFont} * 1rem) + (${maxFont} - ${minFont}) *
-        (((100vw - (${minScreen} * 1rem))) / (${maxScreen} - ${minScreen}))
-    );
-  }
+    @media (min-width: calc(${minScreen} * 10px)) {
+      font-size: calc(
+        (${minFont} * 1rem) + (${maxFont} - ${minFont}) *
+          (((100vw - (${minScreen} * 1rem))) / (${maxScreen} - ${minScreen}))
+      );
+    }
 
-  @media (min-width: calc(${maxScreen} * 10px)) {
-    font-size: calc(${maxFont} * 1rem);
-  }
+    @media (min-width: calc(${maxScreen} * 10px)) {
+      font-size: calc(${maxFont} * 1rem);
+    }
   `
 }
 

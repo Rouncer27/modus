@@ -1,15 +1,17 @@
+import { css } from "styled-components"
+
 import {
   colors,
   fonts,
-  H1Navy,
-  H2Navy,
-  H3Navy,
-  H4Navy,
+  H1Black,
+  H2Black,
+  H3Black,
+  H4Black,
   B1Black,
   fontSizer,
 } from "./index"
 
-export const standardWysiwyg = `
+export const standardWysiwyg = css`
   width: 100%;
   margin-right: auto;
   margin-left: auto;
@@ -114,28 +116,28 @@ export const standardWysiwyg = `
   }
 
   h1 {
-    ${H1Navy};
+    ${H1Black};
   }
 
   h2 {
-    ${H2Navy};
+    ${H2Black};
   }
 
   h3 {
-    ${H3Navy}
+    ${H3Black}
   }
 
   h4 {
-    ${H4Navy}
+    ${H4Black}
   }
 
   h5 {
-    ${H4Navy}
+    ${H4Black}
     ${fontSizer(2, 2.4, 76.8, 150, 2)};
   }
 
   h6 {
-    ${H4Navy}
+    ${H4Black}
     ${fontSizer(1.8, 2, 76.8, 150, 2)};
   }
 
@@ -267,5 +269,4 @@ export const standardWysiwyg = `
   img {
     width: auto;
   }
-
 `

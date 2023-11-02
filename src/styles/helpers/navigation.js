@@ -1,7 +1,8 @@
+import { css } from "styled-components"
 import { colors } from "./index"
 import { fonts, fontSizer } from "./index"
 
-export const Nav1Base = `
+export const Nav1Base = css`
   ${fontSizer(1.4, 1.6, 76.8, 150, 1.8)};
   font-family: ${fonts.fontPrimary};
   font-weight: normal;
@@ -20,27 +21,27 @@ export const Nav1Base = `
     color: ${colors.colorAccent};
   }
 `
-export const Nav1White = `
+export const Nav1White = css`
   ${Nav1Base};
   color: ${colors.white};
 `
 
-export const Nav1Slate = `
+export const Nav1Slate = css`
   ${Nav1Base};
   color: ${colors.colorShad};
 `
 
-export const Nav1Green = `
+export const Nav1Green = css`
   ${Nav1Base};
   color: ${colors.colorSecondary};
 `
 
-export const Nav1Blue = `
+export const Nav1Blue = css`
   ${Nav1Base};
   color: ${colors.colorPrimary};
 `
 
-export const Nav2Base = `
+export const Nav2Base = css`
   ${fontSizer(1.2, 1.2, 76.8, 150, 1.6)};
   font-family: ${fonts.fontPrimary};
   font-weight: bold;
@@ -60,7 +61,7 @@ export const Nav2Base = `
   }
 `
 
-export const Nav2White = `
+export const Nav2White = css`
   ${Nav2Base};
   color: ${colors.white};
 `

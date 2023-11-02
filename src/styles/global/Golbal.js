@@ -4,7 +4,6 @@ import theme from "../theme/Theme"
 
 import FontAwesome from "../Fonts/FontAwesome"
 import PrimaryFonts from "../Fonts/PrimaryFonts"
-import SecondaryFonts from "../Fonts/SecondaryFonts"
 
 import { fontSizer } from "../helpers/index"
 
@@ -12,9 +11,8 @@ const GlobalStyle = createGlobalStyle`
 /* Browser Reset */
 ${styledNormalize}
 /* Fonts */
-${FontAwesome}
 ${PrimaryFonts}
-${SecondaryFonts}
+${FontAwesome}
 
 :root {
     --primary: #96BCC5;
@@ -62,7 +60,7 @@ ${SecondaryFonts}
     margin: 0;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
-    font-family: ${theme.fontSecondary};
+    font-family: ${theme.fontPrimary};
     font-size: 1.8rem;
     font-weight: normal;
     line-height: ${theme.baseLineHeight};

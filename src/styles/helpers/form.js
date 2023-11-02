@@ -1,9 +1,10 @@
+import { css } from "styled-components"
 import { colors } from "./index"
 import { fonts } from "./index"
 
 import { fontSizer } from "./index"
 
-export const labelSmall = `
+export const labelSmall = css`
   display: block;
   width: 100%;
   color: ${colors.black};
@@ -30,7 +31,7 @@ export const labelSmall = `
   }
 `
 
-export const smallInput = `
+export const smallInput = css`
   display: block;
   width: 100%;
   padding: 0.5rem;
@@ -45,7 +46,7 @@ export const smallInput = `
   }
 `
 
-export const inputFieldSectionOne = `
+export const inputFieldSectionOne = css`
   position: relative;
   padding-top: 3rem;
 
@@ -80,7 +81,7 @@ export const inputFieldSectionOne = `
   }
 `
 
-export const textareaSectionOne = `
+export const textareaSectionOne = css`
   position: relative;
   padding-top: 3rem;
 
