@@ -49,6 +49,7 @@ const IndexPage = () => {
             gravida vitae, ultricies ac, leo. Integer leo pede, ornare a,
             lacinia eu, vulputate vel, nisl.
           </p>
+
           <div className="buttons">
             <a href="#">Learn More</a>
             <button>Learn More</button>
