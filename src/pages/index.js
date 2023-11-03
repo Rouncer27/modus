@@ -3,16 +3,15 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
+import BlockRenderer from "../Renderers/BlockRenderer/BlockRenderer"
 
 const IndexPage = props => {
   const pageComponentsBlocks =
     props?.data?.pageComponents?.pageComponents?.pageComponentsBlocks
 
-  console.log("pageComponentsBlocks: ", pageComponentsBlocks)
-
   return (
     <Layout>
-      <main>Home PAge</main>
+      <BlockRenderer blocks={pageComponentsBlocks} />
     </Layout>
   )
 }
