@@ -39,6 +39,14 @@ export const homeQuery = graphql`
                   fieldGroupName
                   title
                 }
+                heroImage {
+                  altText
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(width: 3000)
+                    }
+                  }
+                }
               }
             }
           }
@@ -68,6 +76,14 @@ export const homeQuery = graphql`
                 fieldGroupName
                 leftContent {
                   fieldGroupName
+                  image {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(width: 2000)
+                      }
+                    }
+                  }
                 }
                 rightContent {
                   content
