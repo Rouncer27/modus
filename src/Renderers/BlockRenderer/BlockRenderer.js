@@ -2,8 +2,10 @@ import React from "react"
 
 import HeroBlockRenderer from "../HeroBlockRenderer/HeroBlockRenderer"
 import ContentBlocksRenderer from "../ContentBlocksRenderer/ContentBlocksRenderer"
+import SliderBlocksRenderer from "../SliderBlocksRenderer/SliderBlocksRenderer"
 
 const BlockRenderer = ({ blocks }) => {
+  // console.log("BlockRenderer: ", blocks)
   const allPageComponents =
     blocks?.length > 0 ? (
       <>
@@ -22,6 +24,14 @@ const BlockRenderer = ({ blocks }) => {
                 <ContentBlocksRenderer
                   key={index}
                   contentBlock={block.contentBlocksSections}
+                />
+              )
+
+            case "Page_Pagecomponents_PageComponentsBlocks_SliderBlocks":
+              return (
+                <SliderBlocksRenderer
+                  key={index}
+                  sliderBlock={block.sliderBlocksSections}
                 />
               )
             default:

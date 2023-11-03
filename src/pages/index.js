@@ -32,6 +32,12 @@ export const homeQuery = graphql`
           ... on WpPage_Pagecomponents_PageComponentsBlocks_HeroBlocks {
             fieldGroupName
             herosSections {
+              ##
+              ##
+              ## HeroOne
+              ##
+              ##
+
               ... on WpPage_Pagecomponents_PageComponentsBlocks_HeroBlocks_HerosSections_HeroOne {
                 fieldGroupName
                 heroContent {
@@ -60,6 +66,12 @@ export const homeQuery = graphql`
           ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentBlocks {
             fieldGroupName
             contentBlocksSections {
+              ##
+              ##
+              ## SideBySide
+              ##
+              ##
+
               ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_SideBySide {
                 fieldGroupName
                 leftSide {
@@ -71,6 +83,12 @@ export const homeQuery = graphql`
                   rightSideContent
                 }
               }
+
+              ##
+              ##
+              ## ImageByContent
+              ##
+              ##
 
               ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ImageByContent {
                 fieldGroupName
@@ -88,6 +106,69 @@ export const homeQuery = graphql`
                 rightContent {
                   content
                   fieldGroupName
+                }
+              }
+
+              ##
+              ##
+              ## BoxImageLinks
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_BoxImageLinks {
+                fieldGroupName
+                boxLinks {
+                  fieldGroupName
+                  pageLink {
+                    ... on WpPage {
+                      id
+                      slug
+                      uri
+                    }
+                  }
+                  title
+                  image {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(width: 2000)
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          ##
+          ##
+          # NOTE: This is the query for all the Slider Blokcs types. #
+          ##
+          ##
+
+          ... on WpPage_Pagecomponents_PageComponentsBlocks_SliderBlocks {
+            fieldGroupName
+            sliderBlocksSections {
+              ##
+              ##
+              ## SliderOne
+              ##
+              ##
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_SliderBlocks_SliderBlocksSections_SliderOne {
+                fieldGroupName
+                slides {
+                  topTitle
+                  smallContent
+                  bigTitle
+                  fieldGroupName
+                  image {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(width: 2500)
+                      }
+                    }
+                  }
                 }
               }
             }
