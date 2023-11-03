@@ -137,6 +137,51 @@ export const homeQuery = graphql`
                   }
                 }
               }
+
+              ##
+              ##
+              ## ContentWithMiddleImage
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ContentWithMiddleImage {
+                fieldGroupName
+                centerImage {
+                  altText
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(width: 2000)
+                    }
+                  }
+                }
+                leftContent {
+                  boxColour
+                  content
+                  fieldGroupName
+                }
+                rightContent {
+                  boldContent
+                  boxColour
+                  content
+                  button {
+                    buttonRequired
+                    buttonText
+                    fieldGroupName
+                    pageLink {
+                      ... on WpPage {
+                        id
+                        slug
+                        uri
+                      }
+                      ... on WpPost {
+                        id
+                        slug
+                        uri
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
 
