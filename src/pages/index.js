@@ -63,6 +63,17 @@ export const homeQuery = graphql`
                   rightSideContent
                 }
               }
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ImageByContent {
+                fieldGroupName
+                leftContent {
+                  fieldGroupName
+                }
+                rightContent {
+                  content
+                  fieldGroupName
+                }
+              }
             }
           }
         }

@@ -1,6 +1,7 @@
 import React from "react"
 
 import SideBySide from "../../components/ContentBlocks/SideBySide"
+import ImageByContent from "../../components/ContentBlocks/ImageByContent"
 
 const ContentBlocksRenderer = ({ contentBlock }) => {
   console.log("ContentBlocksRenderer: ", contentBlock)
@@ -12,6 +13,8 @@ const ContentBlocksRenderer = ({ contentBlock }) => {
           switch (block.fieldGroupName) {
             case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_SideBySide":
               return <SideBySide key={index} data={block} />
+            case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ImageByContent":
+              return <ImageByContent key={index} data={block} />
             default:
               return <p>Cannot find this component {block.fieldGroupName}</p>
           }
