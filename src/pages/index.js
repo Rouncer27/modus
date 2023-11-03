@@ -218,6 +218,28 @@ export const homeQuery = graphql`
               }
             }
           }
+
+          ##
+          ##
+          # NOTE: This is the query for all the Display Content Blokcs types. #
+          ##
+          ##
+
+          ... on WpPage_Pagecomponents_PageComponentsBlocks_DisplayContentBlocks {
+            fieldGroupName
+            displayContentBlocksSections {
+              ##
+              ##
+              ## DisplayNewsPosts
+              ##
+              ##
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_DisplayContentBlocks_DisplayContentBlocksSections_DisplayNewsPosts {
+                displayNewsPosts
+                fieldGroupName
+                title
+              }
+            }
+          }
         }
       }
     }

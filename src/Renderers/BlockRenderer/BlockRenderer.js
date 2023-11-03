@@ -3,6 +3,7 @@ import React from "react"
 import HeroBlockRenderer from "../HeroBlockRenderer/HeroBlockRenderer"
 import ContentBlocksRenderer from "../ContentBlocksRenderer/ContentBlocksRenderer"
 import SliderBlocksRenderer from "../SliderBlocksRenderer/SliderBlocksRenderer"
+import DisplayContentBlocksRenderer from "../DisplayContentBlocksRenderer/DisplayContentBlocksRenderer"
 
 const BlockRenderer = ({ blocks }) => {
   // console.log("BlockRenderer: ", blocks)
@@ -32,6 +33,14 @@ const BlockRenderer = ({ blocks }) => {
                 <SliderBlocksRenderer
                   key={index}
                   sliderBlock={block.sliderBlocksSections}
+                />
+              )
+
+            case "Page_Pagecomponents_PageComponentsBlocks_DisplayContentBlocks":
+              return (
+                <DisplayContentBlocksRenderer
+                  key={index}
+                  displayContentBlocks={block.displayContentBlocksSections}
                 />
               )
             default:
