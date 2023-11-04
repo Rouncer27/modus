@@ -6,6 +6,7 @@ import Seo from "../components/Seo"
 import BlockRenderer from "../Renderers/BlockRenderer/BlockRenderer"
 
 const IndexPage = props => {
+  console.log("hello")
   const pageComponentsBlocks =
     props?.data?.pageComponents?.pageComponents?.pageComponentsBlocks
 
