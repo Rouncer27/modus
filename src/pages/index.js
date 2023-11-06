@@ -55,6 +55,24 @@ export const homeQuery = graphql`
                   }
                 }
               }
+
+              ##
+              ##
+              ## HeroTwo
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_HeroBlocks_HerosSections_HeroTwo {
+                fieldGroupName
+                heroImage {
+                  altText
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(width: 3000)
+                    }
+                  }
+                }
+              }
             }
           }
 
@@ -182,6 +200,19 @@ export const homeQuery = graphql`
                     }
                   }
                 }
+              }
+
+              ##
+              ##
+              ## ColouredBlockContent
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ColouredBlockContent {
+                backgroundColour
+                boldTitle
+                content
+                fieldGroupName
               }
             }
           }

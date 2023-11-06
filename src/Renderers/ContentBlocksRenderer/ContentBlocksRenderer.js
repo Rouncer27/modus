@@ -4,6 +4,7 @@ import SideBySide from "../../components/ContentBlocks/SideBySide"
 import ImageByContent from "../../components/ContentBlocks/ImageByContent"
 import BoxImageLinks from "../../components/ContentBlocks/BoxImageLinks"
 import ContentWithMiddleImage from "../../components/ContentBlocks/ContentWithMiddleImage"
+import ColouredBlockContent from "../../components/ContentBlocks/ColouredBlockContent"
 
 const ContentBlocksRenderer = ({ contentBlock }) => {
   console.log("ContentBlocksRenderer: ", contentBlock)
@@ -21,6 +22,8 @@ const ContentBlocksRenderer = ({ contentBlock }) => {
               return <BoxImageLinks key={index} data={block} />
             case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ContentWithMiddleImage":
               return <ContentWithMiddleImage key={index} data={block} />
+            case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ColouredBlockContent":
+              return <ColouredBlockContent key={index} data={block} />
             default:
               return <p>Cannot find this component {block.fieldGroupName}</p>
           }

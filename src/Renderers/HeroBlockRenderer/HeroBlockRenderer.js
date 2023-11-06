@@ -1,6 +1,7 @@
 import React from "react"
 
 import HeroOne from "../../components/HeroBlocks/HeroOne"
+import HeroTwo from "../../components/HeroBlocks/HeroTwo"
 
 const HeroBlockRenderer = ({ heroBlock }) => {
   console.log("HeroBlockRenderer: ", heroBlock)
@@ -11,6 +12,8 @@ const HeroBlockRenderer = ({ heroBlock }) => {
           switch (block.fieldGroupName) {
             case "Page_Pagecomponents_PageComponentsBlocks_HeroBlocks_HerosSections_HeroOne":
               return <HeroOne key={index} data={block} />
+            case "Page_Pagecomponents_PageComponentsBlocks_HeroBlocks_HerosSections_HeroTwo":
+              return <HeroTwo key={index} data={block} />
             default:
               return <p>Cannot find this component {block.fieldGroupName}</p>
           }
