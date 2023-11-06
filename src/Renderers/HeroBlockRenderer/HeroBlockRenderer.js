@@ -4,7 +4,7 @@ import HeroOne from "../../components/HeroBlocks/HeroOne"
 import HeroTwo from "../../components/HeroBlocks/HeroTwo"
 
 const HeroBlockRenderer = ({ heroBlock }) => {
-  console.log("HeroBlockRenderer: ", heroBlock)
+  // console.log("HeroBlockRenderer: ", heroBlock)
   const heroCompnent =
     heroBlock?.length > 0 ? (
       <>

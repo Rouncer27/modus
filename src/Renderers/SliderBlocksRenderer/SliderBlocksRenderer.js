@@ -3,7 +3,7 @@ import React from "react"
 import SliderOne from "../../components/SliderBlocks/SliderOne"
 
 const SliderBlocksRenderer = ({ sliderBlock }) => {
-  console.log("SliderBlocksRenderer: ", sliderBlock)
+  // console.log("SliderBlocksRenderer: ", sliderBlock)
   const sliderCompnent =
     sliderBlock?.length > 0 ? (
       <>

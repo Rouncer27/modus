@@ -7,7 +7,7 @@ import ContentWithMiddleImage from "../../components/ContentBlocks/ContentWithMi
 import ColouredBlockContent from "../../components/ContentBlocks/ColouredBlockContent"
 
 const ContentBlocksRenderer = ({ contentBlock }) => {
-  console.log("ContentBlocksRenderer: ", contentBlock)
+  // console.log("ContentBlocksRenderer: ", contentBlock)
 
   const contentBlockCompnent =
     contentBlock?.length > 0 ? (

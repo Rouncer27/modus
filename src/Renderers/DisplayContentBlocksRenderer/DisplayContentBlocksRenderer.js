@@ -3,7 +3,7 @@ import React from "react"
 import DisplayNewsPosts from "../../components/DisplayContentBlocks/DisplayNewsPosts"
 
 const DisplayContentBlocksRenderer = ({ displayContentBlocks }) => {
-  console.log("DisplayContentBlocksRenderer: ", displayContentBlocks)
+  // console.log("DisplayContentBlocksRenderer: ", displayContentBlocks)
   const displayContent =
     displayContentBlocks?.length > 0 ? (
       <>

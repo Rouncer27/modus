@@ -11,7 +11,7 @@ const BlockRenderer = ({ blocks }) => {
     blocks?.length > 0 ? (
       <>
         {blocks.map((block, index) => {
-          console.log("block", block)
+          // console.log("block", block)
           switch (block.fieldGroupName) {
             case "Page_Pagecomponents_PageComponentsBlocks_HeroBlocks":
               return (

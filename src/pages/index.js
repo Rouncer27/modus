@@ -124,6 +124,14 @@ export const homeQuery = graphql`
                 }
                 rightContent {
                   content
+                  iconLogo {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(width: 2000)
+                      }
+                    }
+                  }
                   fieldGroupName
                 }
               }
