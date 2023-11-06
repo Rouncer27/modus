@@ -143,6 +143,7 @@ export const homeQuery = graphql`
 
               ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_BoxImageLinks {
                 fieldGroupName
+                sectionTitle
                 boxLinks {
                   fieldGroupName
                   pageLink {

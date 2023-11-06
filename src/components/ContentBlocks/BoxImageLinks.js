@@ -2,13 +2,15 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import React from "react"
-import { B1White, BigWrapper } from "../../styles/helpers"
+import { B1White, BigWrapper, H3Black } from "../../styles/helpers"
 
 const BoxImageLinks = ({ data }) => {
-  console.log("BoxImageLinks: ", data)
   return (
     <StyledSection>
       <div className="wrapper">
+        <div className="section-title">
+          <h2>{data.sectionTitle}</h2>
+        </div>
         <div className="links">
           {data.boxLinks.map((box, index) => {
             const imageDisplay = getImage(
@@ -45,6 +47,15 @@ const BoxImageLinks = ({ data }) => {
 const StyledSection = styled.section`
   .wrapper {
     ${BigWrapper};
+  }
+
+  .section-title {
+    width: 100%;
+    text-align: center;
+
+    h2 {
+      ${H3Black};
+    }
   }
 
   .links {
