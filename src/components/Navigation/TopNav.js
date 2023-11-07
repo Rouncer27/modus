@@ -7,7 +7,7 @@ const TopNav = () => {
   return (
     <>
       <TopNavButton setIsOpen={setIsOpen} />
-      <TopNavDrawer isOpen={isOpen} setIsOpen={setIsOpen} />
+      <TopNavDrawer isOpen={isOpen} />
     </>
   )
 }

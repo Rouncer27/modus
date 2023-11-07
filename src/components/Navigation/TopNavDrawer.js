@@ -24,16 +24,16 @@ const getData = graphql`
   }
 `
 
-const TopNavDrawer = ({ isOpen, setIsOpen }) => {
+const TopNavDrawer = ({ isOpen }) => {
   const data = useStaticQuery(getData)
   const menuItems = data.mobileMenu.menuItems.nodes
   return (
-    <NavDrawer isOpen={isOpen}>
+    <NavDrawer className={`${isOpen ? "active" : ""}`}>
       <div className="wrapper">
         <div className="mobileLogo">
           <MainLogo />
         </div>
-        <TopNavContainer navitems={menuItems} setIsOpen={setIsOpen} />
+        <TopNavContainer navitems={menuItems} />
       </div>
     </NavDrawer>
   )
@@ -49,10 +49,10 @@ const NavDrawer = styled.div`
   width: 100%;
   height: 100vh;
   transition: all 0.3s ease-in;
-  transform: translateX(${props => (props.isOpen ? "0%" : "100%")});
+  transform: translateX(100%);
   background: ${colors.colorPrimary};
-  opacity: ${props => (props.isOpen ? 1 : 0)};
-  z-index: ${props => (props.isOpen ? 999999999 : -9999999)};
+  opacity: 0;
+  z-index: -99999999;
   overflow-y: scroll;
   background: linear-gradient(
     to bottom,
@@ -61,6 +61,12 @@ const NavDrawer = styled.div`
     ${colors.colorPrimary} 18.5rem,
     ${colors.colorPrimary} 100%
   );
+
+  &.active {
+    transform: translateX(0%);
+    opacity: 1;
+    z-index: 999999999;
+  }
 
   .wrapper {
     display: flex;

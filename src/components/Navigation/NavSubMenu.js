@@ -4,7 +4,10 @@ import NavSubItem from "./NavSubItem"
 
 const NavSubMenu = ({ subActive, items }) => {
   return (
-    <NavSubMenuStyled subactive={subActive} sublenght={items.length}>
+    <NavSubMenuStyled
+      className={`${subActive ? "sub-active" : ""}`}
+      $sublenght={items.length}
+    >
       {items.map(item => (
         <NavSubItem key={item.id} item={item} />
       ))}
@@ -19,11 +22,16 @@ const NavSubMenuStyled = styled.ul`
   justify-content: flex-start;
   position: relative;
   width: 100%;
-  height: ${props =>
-    props.subactive ? `calc((4.75rem * ${props.sublenght}))` : `0rem`};
+  height: 0;
   transition: all 0.3s ease-out;
-  opacity: ${props => (props.subactive ? 1 : 0)};
-  visibility: ${props => (props.subactive ? "visible" : "hidden")};
+  opacity: 0;
+  visibility: hidden;
+
+  &.sub-active {
+    height: ${props => `calc((5.5rem * ${props.$sublenght}))`};
+    opacity: 1;
+    visibility: visible;
+  }
 `
 
 export default NavSubMenu
