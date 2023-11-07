@@ -1,10 +1,15 @@
 import React from "react"
 
+import Layout from "../components/Layout"
+import Seo from "../components/Seo"
+
 const post = () => {
   return (
-    <div>
-      <h1>post</h1>
-    </div>
+    <Layout>
+      <div>
+        <h1>post</h1>
+      </div>
+    </Layout>
   )
 }
 

@@ -46,6 +46,8 @@ const NavDrawer = styled.div`
   transition: all 0.3s ease-in;
   transform: translateX(100%);
   background: ${colors.white};
+  border-radius: 0.25rem;
+  box-shadow: 0.5rem 0.5rem 0.25rem 0.1rem rgba(0, 0, 0, 0.25);
   opacity: 0;
   overflow-y: scroll;
   z-index: -99999999;
