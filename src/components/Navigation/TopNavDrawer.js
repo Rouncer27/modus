@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import { colors } from "../../styles/helpers"
 import MainLogo from "../Logos/MainLogo"
-// import MobileNavContainer from "./MobileNavContainer"
+import TopNavContainer from "./TopNavContainer"
 
 const getData = graphql`
   {
@@ -24,7 +24,7 @@ const getData = graphql`
   }
 `
 
-const MobileNavDrawer = ({ isOpen, setIsOpen }) => {
+const TopNavDrawer = ({ isOpen, setIsOpen }) => {
   const data = useStaticQuery(getData)
   const menuItems = data.mobileMenu.menuItems.nodes
   return (
@@ -33,7 +33,7 @@ const MobileNavDrawer = ({ isOpen, setIsOpen }) => {
         <div className="mobileLogo">
           <MainLogo />
         </div>
-        {/* <MobileNavContainer navitems={menuItems} setIsOpen={setIsOpen} /> */}
+        <TopNavContainer navitems={menuItems} setIsOpen={setIsOpen} />
       </div>
     </NavDrawer>
   )
@@ -42,14 +42,14 @@ const MobileNavDrawer = ({ isOpen, setIsOpen }) => {
 const NavDrawer = styled.div`
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100vh;
   transition: all 0.3s ease-in;
-  transform: translateX(${props => (props.isOpen ? "0%" : "-100%")});
+  transform: translateX(${props => (props.isOpen ? "0%" : "100%")});
   background: ${colors.colorPrimary};
   opacity: ${props => (props.isOpen ? 1 : 0)};
   z-index: ${props => (props.isOpen ? 999999999 : -9999999)};
@@ -95,4 +95,4 @@ const NavDrawer = styled.div`
   }
 `
 
-export default MobileNavDrawer
+export default TopNavDrawer
