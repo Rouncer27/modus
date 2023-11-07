@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import styled from "styled-components"
-import { B1White, B3White, BigWrapper, colors } from "../styles/helpers"
+import { B3White, BigWrapper, colors } from "../styles/helpers"
 
 const getData = graphql`
   {

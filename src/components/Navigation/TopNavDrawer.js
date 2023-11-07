@@ -29,7 +29,7 @@ const TopNavDrawer = ({ isOpen }) => {
   const menuItems = data.mobileMenu.menuItems.nodes
   return (
     <NavDrawer className={`${isOpen ? "active" : ""}`}>
-      <div className="wrapper">
+      <div className="main-nav-wrapper">
         <div className="side-logo"></div>
         <TopNavContainer navitems={menuItems} />
       </div>
@@ -65,7 +65,7 @@ const NavDrawer = styled.div`
     z-index: 999999999;
   }
 
-  .wrapper {
+  .main-nav-wrapper {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
