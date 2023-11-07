@@ -41,7 +41,7 @@ const DisplayNewsPosts = ({ data }) => {
           const imageAlt = post.postComponents.featuredImage.altText
           return (
             <StyledArticle className="article-link" key={post.id}>
-              <Link to={`/${post.slug}`}>
+              <Link to={`/project-news/${post.slug}`}>
                 <div className="article-title">
                   <h2>{post.title}</h2>
                 </div>
