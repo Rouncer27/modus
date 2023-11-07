@@ -25,7 +25,7 @@ const MobileNavButton = ({ setIsOpen }) => {
 }
 
 const TopNav = styled.div`
-  position: absolute;
+  position: fixed;
   top: 3.5rem;
   right: 3.5rem;
   z-index: 9999999999999999;

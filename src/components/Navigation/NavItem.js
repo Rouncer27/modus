@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { colors, B2Black } from "../../styles/helpers"
+import { colors, B2Black, B3Black } from "../../styles/helpers"
 
 import NavSubMenu from "./NavSubMenu"
 
@@ -47,8 +47,6 @@ const NavItem = ({ item }) => {
 const NavItemStyled = styled.li`
   position: relative;
   width: 100%;
-  border-bottom: 0.1rem solid ${colors.white};
-  text-align: left;
 
   .sub-wrap {
     button {
@@ -61,7 +59,7 @@ const NavItemStyled = styled.li`
       background-color: transparent;
       font-size: 3rem;
       font-weight: bold;
-      color: ${colors.white};
+      color: ${colors.black};
       border: none;
       border-radius: 0 !important;
       line-height: 0;
@@ -78,31 +76,23 @@ const NavItemStyled = styled.li`
   }
 
   a {
-    ${B2Black};
+    ${B3Black};
     display: block;
     width: 100%;
     padding: 2rem;
-    color: ${colors.white};
     text-transform: uppercase;
 
     &:hover {
-      color: ${colors.colorTertiary};
+      color: ${colors.white};
+      background-color: ${colors.colorSecondary};
     }
 
     &[aria-current="page"] {
-      color: ${colors.colorSecondary} !important;
-      background-color: ${colors.colorAccent};
+      color: ${colors.white};
+      background-color: ${colors.colorSecondary};
 
       &:hover {
         cursor: default;
-      }
-    }
-
-    &.mobile-highlight {
-      background-color: ${colors.colorTertiary};
-
-      &:hover {
-        color: ${colors.black} !important;
       }
     }
   }

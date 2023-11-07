@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import NavItem from "./NavItem"
-import { B2Black, colors } from "../../styles/helpers"
+import { B3Black, colors } from "../../styles/helpers"
 
 const TopNavContainer = ({ navitems }) => {
   const topNavItems = navitems.filter(item => item.parentDatabaseId === 0)
@@ -27,27 +27,25 @@ const TopNavContainer = ({ navitems }) => {
 
 const TopNavContainerStyled = styled.nav`
   display: block;
-  width: 100%;
+  width: 90%;
+  background-color: rgba(207, 221, 224, 0.94);
 
   ul.main-mobile-nav {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     width: 100%;
-    padding-bottom: 5rem;
+    height: 100%;
 
-    li {
-      position: relative;
-      width: 100%;
-      border-bottom: 0.1rem solid ${colors.white};
-      text-align: left;
+    /* li {
+      ${B3Black};
 
       a {
-        ${B2Black};
+        ${B3Black};
         display: block;
         width: 100%;
         padding: 2rem;
-        color: ${colors.white};
         text-transform: uppercase;
 
         &:hover {
@@ -62,7 +60,7 @@ const TopNavContainerStyled = styled.nav`
           }
         }
       }
-    }
+    } */
   }
 `
 
