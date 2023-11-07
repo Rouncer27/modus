@@ -27,9 +27,7 @@ const getData = graphql`
 `
 
 const DisplayNewsPosts = ({ data }) => {
-  console.log("DisplayNewsPosts: ", data)
   const postsData = useStaticQuery(getData)
-  console.log("postsData: ", postsData)
   return (
     <StyledSection>
       <div className="wrapper">
