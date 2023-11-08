@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import NavItem from "./NavItem"
-import { B3Black, colors } from "../../styles/helpers"
 
 const TopNavContainer = ({ navitems }) => {
   const topNavItems = navitems.filter(item => item.parentDatabaseId === 0)
@@ -37,30 +36,6 @@ const TopNavContainerStyled = styled.nav`
     justify-content: space-evenly;
     width: 100%;
     height: 100%;
-
-    /* li {
-      ${B3Black};
-
-      a {
-        ${B3Black};
-        display: block;
-        width: 100%;
-        padding: 2rem;
-        text-transform: uppercase;
-
-        &:hover {
-          color: ${colors.colorTertiary};
-        }
-
-        &[aria-current="page"] {
-          color: ${colors.colorTertiary};
-
-          &:hover {
-            cursor: default;
-          }
-        }
-      }
-    } */
   }
 `
 

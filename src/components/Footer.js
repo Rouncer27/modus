@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import { B3White, BigWrapper, colors } from "../styles/helpers"
 
@@ -18,21 +19,65 @@ const getData = graphql`
         }
       }
     }
+
+    logos: wp {
+      acfOptionsSiteWideSettings {
+        siteWideOptions {
+          footerMainLogo {
+            altText
+            sourceUrl
+            localFile {
+              childImageSharp {
+                gatsbyImageData(width: 1500)
+              }
+            }
+          }
+
+          footerLogoIcon {
+            altText
+            sourceUrl
+            localFile {
+              childImageSharp {
+                gatsbyImageData(width: 1000)
+              }
+            }
+          }
+        }
+      }
+    }
   }
 `
 
 const Footer = () => {
   const data = useStaticQuery(getData)
-  const { footerMenu } = data
+  const { footerMenu, logos } = data
+  const footerMainLogo = getImage(
+    logos.acfOptionsSiteWideSettings.siteWideOptions.footerMainLogo.localFile
+      .childImageSharp.gatsbyImageData
+  )
+  const footerMainLogoAlt =
+    logos.acfOptionsSiteWideSettings.siteWideOptions.footerMainLogo.altText
 
-  console.log("footerMenu", footerMenu)
+  const footerLogoIcon = getImage(
+    logos.acfOptionsSiteWideSettings.siteWideOptions.footerLogoIcon.localFile
+      .childImageSharp.gatsbyImageData
+  )
+  const footerLogoIconAlt =
+    logos.acfOptionsSiteWideSettings.siteWideOptions.footerLogoIcon.altText
 
   return (
     <StyledFooter>
       <footer>
         <div className="wrapper">
           <div className="footer-top">
-            <div className="footer-logo"></div>
+            <div className="footer-logo">
+              <GatsbyImage
+                image={footerMainLogo}
+                alt={footerMainLogoAlt}
+                layout="fullWidth"
+                formats={["auto", "webp", "avif"]}
+              />
+            </div>
             <div className="foot-nav-links">
               <nav>
                 <ul>
@@ -51,7 +96,14 @@ const Footer = () => {
               </nav>
             </div>
 
-            <div className="footer-social"></div>
+            <div className="footer-social">
+              <GatsbyImage
+                image={footerLogoIcon}
+                alt={footerLogoIconAlt}
+                layout="fullWidth"
+                formats={["auto", "webp", "avif"]}
+              />
+            </div>
           </div>
 
           <div className="footer-copy">
