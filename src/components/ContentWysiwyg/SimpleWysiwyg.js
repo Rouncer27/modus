@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { H1Black, medWrapper } from "../../styles/helpers"
-
 import BaseWysiwyg from "./BaseWysiwyg/BaseWysiwyg"
 
 const SimpleWysiwyg = ({ data }) => {
@@ -11,16 +10,14 @@ const SimpleWysiwyg = ({ data }) => {
         <div className="title">
           <h1>{data.title}</h1>
         </div>
-        <div className="wysiwyg">
-          <BaseWysiwyg data={data.wysiwyg} />
-        </div>
+        <BaseWysiwyg data={data.wysiwyg} />
       </div>
     </StyledSection>
   )
 }
 
 const StyledSection = styled.section`
-  margin-top: 25rem;
+  margin-top: 10rem;
 
   .wrapper {
     ${medWrapper};

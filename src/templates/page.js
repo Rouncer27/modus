@@ -8,7 +8,6 @@ import BlockRenderer from "../Renderers/BlockRenderer/BlockRenderer"
 const page = props => {
   const pageComponentsBlocks =
     props?.data?.pageComponents?.pageComponents?.pageComponentsBlocks
-  console.log("pageComponentsBlocks", pageComponentsBlocks)
   return (
     <Layout>
       <BlockRenderer blocks={pageComponentsBlocks} />
@@ -16,7 +15,7 @@ const page = props => {
   )
 }
 
-export const pageQuery = graphql`
+export const pageTempQuery = graphql`
   query pageTempPage($id: String!) {
     pageComponents: wpPage(id: { eq: $id }) {
       pageComponents {
