@@ -71,12 +71,14 @@ const Footer = () => {
         <div className="wrapper">
           <div className="footer-top">
             <div className="footer-logo">
-              <GatsbyImage
-                image={footerMainLogo}
-                alt={footerMainLogoAlt}
-                layout="fullWidth"
-                formats={["auto", "webp", "avif"]}
-              />
+              <div className="footer-logo__wrapper">
+                <GatsbyImage
+                  image={footerMainLogo}
+                  alt={footerMainLogoAlt}
+                  layout="fullWidth"
+                  formats={["auto", "webp", "avif"]}
+                />
+              </div>
             </div>
             <div className="foot-nav-links">
               <nav>
@@ -97,12 +99,15 @@ const Footer = () => {
             </div>
 
             <div className="footer-social">
-              <GatsbyImage
-                image={footerLogoIcon}
-                alt={footerLogoIconAlt}
-                layout="fullWidth"
-                formats={["auto", "webp", "avif"]}
-              />
+              <div className="footer-social__links"></div>
+              <div className="footer-social__icon">
+                <GatsbyImage
+                  image={footerLogoIcon}
+                  alt={footerLogoIconAlt}
+                  layout="fullWidth"
+                  formats={["auto", "webp", "avif"]}
+                />
+              </div>
             </div>
           </div>
 
@@ -136,10 +141,16 @@ const StyledFooter = styled.footer`
 
     .footer-logo {
       width: 15%;
+
+      &__wrapper {
+        max-width: 20rem;
+      }
     }
 
     .foot-nav-links {
-      width: 65%;
+      width: calc(65% - 6rem);
+      margin-left: 6rem;
+
       nav {
         width: 100%;
 
@@ -168,7 +179,18 @@ const StyledFooter = styled.footer`
     }
 
     .footer-social {
+      display: flex;
       width: 20%;
+
+      &__links {
+        width: 100%;
+      }
+
+      &__icon {
+        width: 100%;
+        max-width: 12.5rem;
+        margin-top: -2.75rem;
+      }
     }
   }
 
