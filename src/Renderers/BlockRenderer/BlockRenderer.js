@@ -2,6 +2,7 @@ import React from "react"
 
 import HeroBlockRenderer from "../HeroBlockRenderer/HeroBlockRenderer"
 import ContentBlocksRenderer from "../ContentBlocksRenderer/ContentBlocksRenderer"
+import ContentWysiwygRenderer from "../ContentWysiwygRenderer/ContentWysiwygRenderer"
 import SliderBlocksRenderer from "../SliderBlocksRenderer/SliderBlocksRenderer"
 import DisplayContentBlocksRenderer from "../DisplayContentBlocksRenderer/DisplayContentBlocksRenderer"
 
@@ -43,8 +44,19 @@ const BlockRenderer = ({ blocks }) => {
                   displayContentBlocks={block.displayContentBlocksSections}
                 />
               )
+            case "Page_Pagecomponents_PageComponentsBlocks_ContentWysiwygs":
+              return (
+                <ContentWysiwygRenderer
+                  key={index}
+                  contentWysiwyg={block.contentWysiwygsSections}
+                />
+              )
             default:
-              return <p>Cannot find this component {block.fieldGroupName}</p>
+              return (
+                <p key={index}>
+                  Cannot find this component {block.fieldGroupName}
+                </p>
+              )
           }
         })}
       </>
