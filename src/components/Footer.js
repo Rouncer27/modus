@@ -4,6 +4,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import { B3White, BigWrapper, colors } from "../styles/helpers"
 
+import SocialMediaIcon from "./Icons/SocialMediaIcon/SocialMediaIcon"
+
 const getData = graphql`
   {
     footerMenu: wpMenu(name: { eq: "Footer Menu" }) {
@@ -45,12 +47,20 @@ const getData = graphql`
         }
       }
     }
+
+    socialLinks: wp {
+      acfOptionsSiteWideSettings {
+        siteWideOptions {
+          linkedinUrl
+        }
+      }
+    }
   }
 `
 
 const Footer = () => {
   const data = useStaticQuery(getData)
-  const { footerMenu, logos } = data
+  const { footerMenu, logos, socialLinks } = data
   const footerMainLogo = getImage(
     logos.acfOptionsSiteWideSettings.siteWideOptions.footerMainLogo.localFile
       .childImageSharp.gatsbyImageData
@@ -99,7 +109,17 @@ const Footer = () => {
             </div>
 
             <div className="footer-social">
-              <div className="footer-social__links"></div>
+              <div className="footer-social__links">
+                <ul>
+                  <SocialMediaIcon
+                    data={
+                      socialLinks.acfOptionsSiteWideSettings.siteWideOptions
+                        .linkedinUrl
+                    }
+                    type="Linkedin"
+                  />
+                </ul>
+              </div>
               <div className="footer-social__icon">
                 <GatsbyImage
                   image={footerLogoIcon}
@@ -113,9 +133,14 @@ const Footer = () => {
 
           <div className="footer-copy">
             <p>
-              © {new Date().getFullYear()} &middot; Built with
-              {` `}
-              <a href="https://www.gatsbyjs.com">Gatsby</a>
+              Modus Structures Inc © 2023. Designed, and developed by{" "}
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://switchbackcreative.ca/"
+              >
+                Switchback Creative
+              </a>
             </p>
           </div>
         </div>
