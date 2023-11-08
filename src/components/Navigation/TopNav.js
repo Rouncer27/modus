@@ -5,10 +5,19 @@ import styled from "styled-components"
 
 const TopNav = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [btnChecked, setBtnChecked] = useState(false)
   return (
     <div>
-      <TopNavButton setIsOpen={setIsOpen} />
-      <TopNavDrawer isOpen={isOpen} />
+      <TopNavButton
+        setIsOpen={setIsOpen}
+        btnChecked={btnChecked}
+        setBtnChecked={setBtnChecked}
+      />
+      <TopNavDrawer
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        setBtnChecked={setBtnChecked}
+      />
       {!!isOpen && <BlurBackground />}
     </div>
   )

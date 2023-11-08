@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-const MobileNavButton = ({ setIsOpen }) => {
+const MobileNavButton = ({ setIsOpen, btnChecked, setBtnChecked }) => {
   const handleCheckbox = event => {
     if (event.target.checked) {
       setIsOpen(true)
@@ -17,7 +17,11 @@ const MobileNavButton = ({ setIsOpen }) => {
           type="checkbox"
           name="menu-button"
           id="menu-button"
-          onChange={() => handleCheckbox(event)}
+          onChange={() => {
+            setBtnChecked(!btnChecked)
+            handleCheckbox(event)
+          }}
+          checked={btnChecked}
         />
       </label>
     </TopNav>
