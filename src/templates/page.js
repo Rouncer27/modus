@@ -481,6 +481,28 @@ export const pageTempQuery = graphql`
                 leftBlueContent
                 rightContent
               }
+
+              ##
+              ##
+              ## ContentBoldTitles
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentWysiwygs_ContentWysiwygsSections_ContentBoldTitles {
+                fieldGroupName
+                mainTitle
+                openingContent
+                contentSections {
+                  boldTitle
+                  content
+                }
+              }
+
+              ##
+              ##
+              ## END of section
+              ##
+              ##
             }
           }
         }
