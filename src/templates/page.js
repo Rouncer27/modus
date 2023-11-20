@@ -268,6 +268,31 @@ export const pageTempQuery = graphql`
                 content
                 fieldGroupName
               }
+
+              ##
+              ##
+              ## ColouredBlockContentLink
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ColouredBlockContentLink {
+                backgroundColour
+                boldTitle
+                content
+                pageLink {
+                  ... on WpPage {
+                    id
+                    slug
+                    uri
+                  }
+                  ... on WpPost {
+                    id
+                    slug
+                    uri
+                  }
+                }
+                fieldGroupName
+              }
             }
           }
 
