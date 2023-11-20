@@ -299,7 +299,7 @@ export const pageTempQuery = graphql`
 
           ##
           ##
-          # NOTE: This is the query for all the Content WYSIWYG types. #
+          # NOTE: This is the query for all the Content WYSIWYG & Text types. #
           ##
           ##
 
@@ -315,6 +315,19 @@ export const pageTempQuery = graphql`
                 fieldGroupName
                 title
                 wysiwyg
+              }
+              ##
+              ##
+              ## ContentTwoColumns
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentWysiwygs_ContentWysiwygsSections_ContentTwoColumns {
+                fieldGroupName
+                mainTitle
+                leftSubTitle
+                leftBlueContent
+                rightContent
               }
             }
           }
