@@ -374,6 +374,23 @@ export const pageTempQuery = graphql`
                 fieldGroupName
                 title
               }
+
+              ##
+              ##
+              ## DisplayTestimonials
+              ##
+              ##
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_DisplayContentBlocks_DisplayContentBlocksSections_DisplayTestimonials {
+                fieldGroupName
+                display
+                sectionTitle
+              }
+
+              ##
+              ##
+              ##  END Display Content Blokcs types. END
+              ##
+              ##
             }
           }
 
