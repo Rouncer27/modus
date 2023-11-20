@@ -72,6 +72,25 @@ export const homeQuery = graphql`
                   }
                 }
               }
+
+              ##
+              ##
+              ## HeroThree
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_HeroBlocks_HerosSections_HeroThree {
+                fieldGroupName
+                heroTitle
+                heroImage {
+                  altText
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(width: 3000)
+                    }
+                  }
+                }
+              }
             }
           }
 
