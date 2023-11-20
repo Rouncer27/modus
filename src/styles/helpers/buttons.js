@@ -52,3 +52,26 @@ export const BtnPrimaryGreen = css`
     }
   }
 `
+
+export const BtnPrimaryWhite = css`
+  ${BtnPrimaryBase};
+  background-color: rgba(255, 255, 255, 0.31);
+  color: ${colors.black};
+
+  &:hover {
+    background: ${colors.colorSecondary};
+    color: ${colors.white};
+  }
+
+  &:focus {
+    outline: 0.4rem solid #003b49;
+    transition: all 0.35s ease-in-out;
+  }
+
+  &:disabled {
+    &:hover {
+      background: ${colors.colorTertiary};
+      color: ${colors.colorPrimary};
+    }
+  }
+`

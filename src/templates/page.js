@@ -153,6 +153,41 @@ export const pageTempQuery = graphql`
 
               ##
               ##
+              ## FullWidthContent
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_FullWidthContent {
+                fieldGroupName
+                openingTopPaddingRequired
+                title
+                content
+                backgroundColor
+                buttonText
+                pageLink {
+                  ... on WpPage {
+                    id
+                    slug
+                    uri
+                  }
+                  ... on WpPost {
+                    id
+                    slug
+                    uri
+                  }
+                }
+                image {
+                  altText
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(width: 2000)
+                    }
+                  }
+                }
+              }
+
+              ##
+              ##
               ## ListOfLogos
               ##
               ##
