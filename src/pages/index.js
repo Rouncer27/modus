@@ -156,6 +156,26 @@ export const homeQuery = graphql`
 
               ##
               ##
+              ## ListOfLogos
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ListOfLogos {
+                fieldGroupName
+                logos {
+                  logo {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(width: 2000)
+                      }
+                    }
+                  }
+                }
+              }
+
+              ##
+              ##
               ## BoxImageLinks
               ##
               ##
