@@ -183,6 +183,36 @@ export const pageTempQuery = graphql`
 
               ##
               ##
+              ## BoxImageLinksContent
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_BoxImageLinksContent {
+                fieldGroupName
+                boxLinks {
+                  fieldGroupName
+                  pageLink {
+                    ... on WpPage {
+                      id
+                      slug
+                      uri
+                    }
+                  }
+                  title
+                  content
+                  image {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(width: 2000)
+                      }
+                    }
+                  }
+                }
+              }
+
+              ##
+              ##
               ## ContentWithMiddleImage
               ##
               ##

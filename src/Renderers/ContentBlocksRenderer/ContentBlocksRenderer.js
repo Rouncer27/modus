@@ -3,6 +3,7 @@ import React from "react"
 import SideBySide from "../../components/ContentBlocks/SideBySide"
 import ImageByContent from "../../components/ContentBlocks/ImageByContent"
 import BoxImageLinks from "../../components/ContentBlocks/BoxImageLinks"
+import BoxImageLinksContent from "../../components/ContentBlocks/BoxImageLinksContent"
 import ContentWithMiddleImage from "../../components/ContentBlocks/ContentWithMiddleImage"
 import ColouredBlockContent from "../../components/ContentBlocks/ColouredBlockContent"
 
@@ -20,6 +21,8 @@ const ContentBlocksRenderer = ({ contentBlock }) => {
               return <ImageByContent key={index} data={block} />
             case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_BoxImageLinks":
               return <BoxImageLinks key={index} data={block} />
+            case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_BoxImageLinksContent":
+              return <BoxImageLinksContent key={index} data={block} />
             case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ContentWithMiddleImage":
               return <ContentWithMiddleImage key={index} data={block} />
             case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ColouredBlockContent":
