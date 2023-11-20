@@ -330,6 +330,31 @@ export const homeQuery = graphql`
                   }
                 }
               }
+
+              ##
+              ##
+              ## SliderOne
+              ##
+              ##
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_SliderBlocks_SliderBlocksSections_SliderTwo {
+                fieldGroupName
+                slides {
+                  fieldGroupName
+                  slide {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(width: 2500)
+                      }
+                    }
+                  }
+                }
+              }
+
+              ##
+              ##
+              ## Slider section END
+              ##
             }
           }
 
