@@ -3,12 +3,17 @@ import styled from "styled-components"
 import { H3White, colors, standardWrapper } from "../../styles/helpers"
 
 const ColouredBlockContent = ({ data }) => {
+  const noContent = data.content ? "" : "no-para"
   return (
-    <StyledSection className={`background-color-${data.backgroundColour}`}>
+    <StyledSection
+      className={`background-color-${data.backgroundColour} ${noContent}`}
+    >
       <div className="wrapper">
         <div className="main-content">
-          <h2>{data.boldTitle}</h2>
-          <div dangerouslySetInnerHTML={{ __html: data.content }} />
+          {!!data.boldTitle && <h2>{data.boldTitle}</h2>}
+          {!!data.content && (
+            <div dangerouslySetInnerHTML={{ __html: data.content }} />
+          )}
         </div>
       </div>
     </StyledSection>
@@ -39,6 +44,12 @@ const StyledSection = styled.section`
     margin-bottom: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
+  }
+
+  &.no-para {
+    h2 {
+      margin-bottom: 0rem;
+    }
   }
 
   p {

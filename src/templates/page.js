@@ -385,10 +385,30 @@ export const pageTempQuery = graphql`
 
               ##
               ##
-              ## SliderOne
+              ## SliderTwo
               ##
               ##
               ... on WpPage_Pagecomponents_PageComponentsBlocks_SliderBlocks_SliderBlocksSections_SliderTwo {
+                fieldGroupName
+                slides {
+                  fieldGroupName
+                  slide {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(width: 2500)
+                      }
+                    }
+                  }
+                }
+              }
+
+              ##
+              ##
+              ## SliderThree
+              ##
+              ##
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_SliderBlocks_SliderBlocksSections_SliderThree {
                 fieldGroupName
                 slides {
                   fieldGroupName
