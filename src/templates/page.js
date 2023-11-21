@@ -206,6 +206,7 @@ export const pageTempQuery = graphql`
 
               ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ListOfLogos {
                 fieldGroupName
+                sectionTitle
                 logos {
                   logo {
                     altText

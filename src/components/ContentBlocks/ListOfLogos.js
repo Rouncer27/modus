@@ -1,12 +1,17 @@
 import React from "react"
 import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { medWrapper } from "../../styles/helpers"
+import { H2Black, medWrapper } from "../../styles/helpers"
 
 const ListOfLogos = ({ data }) => {
   return (
     <StyledSection>
       <div className="wrapper">
+        {!!data.sectionTitle && (
+          <div className="title">
+            <h2>{data.sectionTitle}</h2>
+          </div>
+        )}
         {data.logos.map((logo, index) => {
           const logoDisplay = getImage(
             logo.logo.localFile.childImageSharp.gatsbyImageData
@@ -31,6 +36,18 @@ const ListOfLogos = ({ data }) => {
 const StyledSection = styled.div`
   .wrapper {
     ${medWrapper};
+    justify-content: flex-start;
+  }
+
+  .title {
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+
+    h2 {
+      ${H2Black};
+    }
   }
 `
 
@@ -43,7 +60,7 @@ const SingleLogo = styled.div`
 
   @media (min-width: 1025px) {
     width: calc(20% - 10rem);
-    margin: 0 5rem;
+    margin: 3rem 5rem;
   }
 `
 
