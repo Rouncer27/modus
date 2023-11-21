@@ -28,6 +28,10 @@ const StyledSection = styled.section`
     background-color: ${colors.colorPrimary};
   }
 
+  &.background-color-black {
+    background-color: #333;
+  }
+
   .wrapper {
     ${standardWrapper};
     padding: 3.5rem 2rem;

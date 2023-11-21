@@ -9,6 +9,8 @@ import ColouredBlockContent from "../../components/ContentBlocks/ColouredBlockCo
 import ColouredBlockContentLink from "../../components/ContentBlocks/ColouredBlockContentLink"
 import ListOfLogos from "../../components/ContentBlocks/ListOfLogos"
 import FullWidthContent from "../../components/ContentBlocks/FullWidthContent"
+import ContentSimple from "../../components/ContentBlocks/ContentSimple"
+import BoxLinks from "../../components/ContentBlocks/BoxLinks"
 
 const ContentBlocksRenderer = ({ contentBlock }) => {
   // console.log("ContentBlocksRenderer: ", contentBlock)
@@ -24,6 +26,8 @@ const ContentBlocksRenderer = ({ contentBlock }) => {
               return <ImageByContent key={index} data={block} />
             case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_BoxImageLinks":
               return <BoxImageLinks key={index} data={block} />
+            case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_BoxLinks":
+              return <BoxLinks key={index} data={block} />
             case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_BoxImageLinksContent":
               return <BoxImageLinksContent key={index} data={block} />
             case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ContentWithMiddleImage":
@@ -36,6 +40,8 @@ const ContentBlocksRenderer = ({ contentBlock }) => {
               return <ListOfLogos key={index} data={block} />
             case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_FullWidthContent":
               return <FullWidthContent key={index} data={block} />
+            case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ContentSimple":
+              return <ContentSimple key={index} data={block} />
             default:
               return <p>Cannot find this component {block.fieldGroupName}</p>
           }

@@ -123,6 +123,18 @@ export const homeQuery = graphql`
 
               ##
               ##
+              ## ContentSimple
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ContentSimple {
+                fieldGroupName
+                simpleContent
+                contentStyle
+              }
+
+              ##
+              ##
               ## ImageByContent
               ##
               ##
@@ -258,6 +270,36 @@ export const homeQuery = graphql`
                   }
                   title
                   content
+                  image {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(width: 2000)
+                      }
+                    }
+                  }
+                }
+              }
+
+              ##
+              ##
+              ## BoxLinks
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_BoxLinks {
+                fieldGroupName
+                sectionTitle
+                boxLinks {
+                  fieldGroupName
+                  pageLink {
+                    ... on WpPage {
+                      id
+                      slug
+                      uri
+                    }
+                  }
+                  title
                   image {
                     altText
                     localFile {
