@@ -36,10 +36,12 @@ const BoxImageLinksContent = ({ data }) => {
                     <div className="content__title">
                       <h3>{box.title}</h3>
                     </div>
-                    <div
-                      className="content__paragraph"
-                      dangerouslySetInnerHTML={{ __html: box.content }}
-                    />
+                    {!!box.content && (
+                      <div
+                        className="content__paragraph"
+                        dangerouslySetInnerHTML={{ __html: box.content }}
+                      />
+                    )}
                     <div className="content__arrow">
                       <span>&#8594;</span>
                     </div>
