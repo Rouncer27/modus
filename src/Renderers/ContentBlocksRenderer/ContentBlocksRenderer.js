@@ -13,6 +13,7 @@ import ContentSimple from "../../components/ContentBlocks/ContentSimple"
 import BoxLinks from "../../components/ContentBlocks/BoxLinks"
 import FullWidthImageByContent from "../../components/ContentBlocks/FullWidthImageByContent"
 import ColouredContentTopImage from "../../components/ContentBlocks/ColouredContentTopImage"
+import FlexibleContentStaggeredImages from "../../components/ContentBlocks/FlexibleContentStaggeredImages"
 
 const ContentBlocksRenderer = ({ contentBlock }) => {
   // console.log("ContentBlocksRenderer: ", contentBlock)
@@ -48,6 +49,8 @@ const ContentBlocksRenderer = ({ contentBlock }) => {
               return <FullWidthImageByContent key={index} data={block} />
             case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ContentSimple":
               return <ContentSimple key={index} data={block} />
+            case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_FlexibleContentStaggeredImages":
+              return <FlexibleContentStaggeredImages key={index} data={block} />
             default:
               return <p>Cannot find this component {block.fieldGroupName}</p>
           }

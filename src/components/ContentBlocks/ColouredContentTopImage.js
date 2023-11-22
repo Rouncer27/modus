@@ -1,17 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import {
-  B1Black,
-  B1White,
-  H1Black,
-  H3Black,
-  colors,
-  medWrapper,
-} from "../../styles/helpers"
+import { B1White, colors, medWrapper } from "../../styles/helpers"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const ColouredContentTopImage = ({ data }) => {
-  console.log("ColouredContentTopImage", data)
   const imageDisplay = getImage(
     data.topImage.localFile.childImageSharp.gatsbyImageData
   )

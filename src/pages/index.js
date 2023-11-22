@@ -129,6 +129,7 @@ export const homeQuery = graphql`
 
               ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ContentSimple {
                 fieldGroupName
+                mainTitle
                 simpleContent
                 contentStyle
               }
@@ -436,6 +437,40 @@ export const homeQuery = graphql`
                 }
                 fieldGroupName
               }
+
+              ##
+              ##
+              ## FlexibleContentStaggeredImages
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_FlexibleContentStaggeredImages {
+                mainTitle
+                contentType
+                listItems {
+                  listItem
+                }
+                content
+                wysiwygContent
+                images {
+                  image {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(width: 2500)
+                      }
+                    }
+                  }
+                }
+
+                fieldGroupName
+              }
+
+              ##
+              ##
+              ## END
+              ##
+              ##
             }
           }
 

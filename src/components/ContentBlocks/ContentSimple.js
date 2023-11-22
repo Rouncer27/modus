@@ -14,6 +14,11 @@ const ContentSimple = ({ data }) => {
   return (
     <StyledSection className={`content-style-${data.contentStyle}`}>
       <div className="wrapper">
+        {!!data.mainTitle && (
+          <div className="main-title">
+            <h2>{data.mainTitle}</h2>
+          </div>
+        )}
         <div dangerouslySetInnerHTML={{ __html: data.simpleContent }} />
       </div>
     </StyledSection>
@@ -26,6 +31,15 @@ const StyledSection = styled.section`
 
   .wrapper {
     ${standardWrapper};
+  }
+
+  .main-title {
+    width: 100%;
+
+    h2 {
+      ${H2Black};
+      text-transform: uppercase;
+    }
   }
 
   &.content-style-h1 {
