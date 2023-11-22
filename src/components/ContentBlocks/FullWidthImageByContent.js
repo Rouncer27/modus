@@ -4,7 +4,6 @@ import { B1Black, H1Black, H3Black, colors } from "../../styles/helpers"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const FullWidthImageByContent = ({ data }) => {
-  console.log("FullWidthImageByContent", data)
   const imageDisplay = getImage(
     data.image.localFile.childImageSharp.gatsbyImageData
   )

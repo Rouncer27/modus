@@ -394,6 +394,26 @@ export const homeQuery = graphql`
 
               ##
               ##
+              ## ColouredContentTopImage
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ColouredContentTopImage {
+                backgroundColour
+                content
+                topImage {
+                  altText
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(width: 2500)
+                    }
+                  }
+                }
+                fieldGroupName
+              }
+
+              ##
+              ##
               ## ColouredBlockContentLink
               ##
               ##

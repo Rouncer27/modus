@@ -12,6 +12,7 @@ import FullWidthContent from "../../components/ContentBlocks/FullWidthContent"
 import ContentSimple from "../../components/ContentBlocks/ContentSimple"
 import BoxLinks from "../../components/ContentBlocks/BoxLinks"
 import FullWidthImageByContent from "../../components/ContentBlocks/FullWidthImageByContent"
+import ColouredContentTopImage from "../../components/ContentBlocks/ColouredContentTopImage"
 
 const ContentBlocksRenderer = ({ contentBlock }) => {
   // console.log("ContentBlocksRenderer: ", contentBlock)
@@ -35,6 +36,8 @@ const ContentBlocksRenderer = ({ contentBlock }) => {
               return <ContentWithMiddleImage key={index} data={block} />
             case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ColouredBlockContent":
               return <ColouredBlockContent key={index} data={block} />
+            case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ColouredContentTopImage":
+              return <ColouredContentTopImage key={index} data={block} />
             case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ColouredBlockContentLink":
               return <ColouredBlockContentLink key={index} data={block} />
             case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ListOfLogos":
