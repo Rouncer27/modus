@@ -13,9 +13,11 @@ const ContentTwoColumns = ({ data }) => {
   return (
     <StyledSection>
       <div className="wrapper">
-        <div className="main-title">
-          <h2>{data.mainTitle}</h2>
-        </div>
+        {!!data.mainTitle && (
+          <div className="main-title">
+            <h2>{data.mainTitle}</h2>
+          </div>
+        )}
         <div className="column-content">
           {!!data.leftSubTitle && (
             <div className="sub-title">
@@ -40,6 +42,7 @@ const ContentTwoColumns = ({ data }) => {
 
 const StyledSection = styled.section`
   padding: 9rem 0;
+
   .wrapper {
     ${medWrapper};
   }
