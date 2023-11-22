@@ -392,6 +392,43 @@ export const pageTempQuery = graphql`
 
               ##
               ##
+              ## ClouredBlockContentCircleImage
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ColouredBlockContentCircleImage {
+                backgroundColour
+                title
+                content
+                buttonText
+                buttonType
+                emailLink
+                pageLink {
+                  ... on WpPage {
+                    id
+                    slug
+                    uri
+                  }
+                  ... on WpPost {
+                    id
+                    slug
+                    uri
+                  }
+                }
+                urlLink
+                image {
+                  altText
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(width: 2000)
+                    }
+                  }
+                }
+                fieldGroupName
+              }
+
+              ##
+              ##
               ## ColouredContentTopImage
               ##
               ##
