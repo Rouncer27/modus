@@ -641,6 +641,18 @@ export const pageTempQuery = graphql`
 
               ##
               ##
+              ## SimpleQuote
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentWysiwygs_ContentWysiwygsSections_SimpleQuote {
+                fieldGroupName
+                quote
+                author
+              }
+
+              ##
+              ##
               ## END of section
               ##
               ##
