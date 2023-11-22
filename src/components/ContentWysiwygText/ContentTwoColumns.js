@@ -17,9 +17,11 @@ const ContentTwoColumns = ({ data }) => {
           <h2>{data.mainTitle}</h2>
         </div>
         <div className="column-content">
-          <div className="sub-title">
-            <h3>{data.leftSubTitle}</h3>
-          </div>
+          {!!data.leftSubTitle && (
+            <div className="sub-title">
+              <h3>{data.leftSubTitle}</h3>
+            </div>
+          )}
           <div
             className="blue-content"
             dangerouslySetInnerHTML={{ __html: data.leftBlueContent }}
@@ -84,7 +86,7 @@ const StyledSection = styled.section`
       p {
         ${H3Black};
         font-weight: normal;
-        color: ${colors.colorPrimary};
+        color: ${colors.colorSecondary};
       }
     }
 

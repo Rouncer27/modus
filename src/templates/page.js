@@ -605,6 +605,7 @@ export const pageTempQuery = graphql`
               ##
               ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentWysiwygs_ContentWysiwygsSections_SimpleWysiwyg {
                 fieldGroupName
+                topPaddingRequired
                 title
                 wysiwyg
               }

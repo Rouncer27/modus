@@ -5,7 +5,9 @@ import BaseWysiwyg from "./BaseWysiwyg/BaseWysiwyg"
 
 const SimpleWysiwyg = ({ data }) => {
   return (
-    <StyledSection>
+    <StyledSection
+      className={`${data.topPaddingRequired ? "padding-top " : ""}`}
+    >
       <div className="wrapper">
         <div className="title">
           <h1>{data.title}</h1>
@@ -17,7 +19,9 @@ const SimpleWysiwyg = ({ data }) => {
 }
 
 const StyledSection = styled.section`
-  margin-top: 10rem;
+  &.padding-top {
+    padding-top: 15rem;
+  }
 
   .wrapper {
     ${medWrapper};
