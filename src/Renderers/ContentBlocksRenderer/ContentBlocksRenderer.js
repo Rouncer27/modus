@@ -11,6 +11,7 @@ import ListOfLogos from "../../components/ContentBlocks/ListOfLogos"
 import FullWidthContent from "../../components/ContentBlocks/FullWidthContent"
 import ContentSimple from "../../components/ContentBlocks/ContentSimple"
 import BoxLinks from "../../components/ContentBlocks/BoxLinks"
+import FullWidthImageByContent from "../../components/ContentBlocks/FullWidthImageByContent"
 
 const ContentBlocksRenderer = ({ contentBlock }) => {
   // console.log("ContentBlocksRenderer: ", contentBlock)
@@ -40,6 +41,8 @@ const ContentBlocksRenderer = ({ contentBlock }) => {
               return <ListOfLogos key={index} data={block} />
             case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_FullWidthContent":
               return <FullWidthContent key={index} data={block} />
+            case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_FullWidthImageByContent":
+              return <FullWidthImageByContent key={index} data={block} />
             case "Page_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ContentSimple":
               return <ContentSimple key={index} data={block} />
             default:

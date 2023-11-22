@@ -203,6 +203,28 @@ export const homeQuery = graphql`
 
               ##
               ##
+              ## FullWidthImageByContent
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_FullWidthImageByContent {
+                fieldGroupName
+                openingTopPaddingRequired
+                title
+                contentBold
+                content
+                image {
+                  altText
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(width: 2000)
+                    }
+                  }
+                }
+              }
+
+              ##
+              ##
               ## ListOfLogos
               ##
               ##
