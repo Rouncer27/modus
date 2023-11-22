@@ -88,6 +88,31 @@ export const pageTempQuery = graphql`
                   }
                 }
               }
+
+              ##
+              ##
+              ## HeroFour
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_HeroBlocks_HerosSections_HeroFour {
+                fieldGroupName
+                heroTitle
+                heroImage {
+                  altText
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(width: 3000)
+                    }
+                  }
+                }
+              }
+
+              ##
+              ##
+              ## END
+              ##
+              ##
             }
           }
 
