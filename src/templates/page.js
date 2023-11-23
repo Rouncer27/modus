@@ -749,6 +749,26 @@ export const pageTempQuery = graphql`
 
               ##
               ##
+              ## Content2ColumnsLogo
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentWysiwygs_ContentWysiwygsSections_Content2ColumnsLogo {
+                fieldGroupName
+                logo {
+                  altText
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(width: 1500)
+                    }
+                  }
+                }
+                contentColumn1
+                contentColumn2
+              }
+
+              ##
+              ##
               ## END of section
               ##
               ##
