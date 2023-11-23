@@ -769,6 +769,35 @@ export const pageTempQuery = graphql`
 
               ##
               ##
+              ## SimpleContentButton
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentWysiwygs_ContentWysiwygsSections_SimpleContentButton {
+                fieldGroupName
+                mainTitle
+                mainContent
+                buttonRequired
+                buttonText
+                buttonType
+                pageLink {
+                  ... on WpPage {
+                    id
+                    slug
+                    uri
+                  }
+                  ... on WpPost {
+                    id
+                    slug
+                    uri
+                  }
+                }
+                linkUrl
+                emailLink
+              }
+
+              ##
+              ##
               ## END of section
               ##
               ##

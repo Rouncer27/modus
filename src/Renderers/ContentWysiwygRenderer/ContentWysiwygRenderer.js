@@ -5,6 +5,7 @@ import ContentTwoColumns from "../../components/ContentWysiwygText/ContentTwoCol
 import ContentBoldTitles from "../../components/ContentWysiwygText/ContentBoldTitles"
 import SimpleQuote from "../../components/ContentWysiwygText/SimpleQuote"
 import Content2ColumnsLogo from "../../components/ContentWysiwygText/Content2ColumnsLogo"
+import SimpleContentButton from "../../components/ContentWysiwygText/SimpleContentButton"
 
 const ContentWysiwygRenderer = ({ contentWysiwyg }) => {
   //   console.log("contentWysiwyg", contentWysiwyg)
@@ -23,6 +24,8 @@ const ContentWysiwygRenderer = ({ contentWysiwyg }) => {
               return <ContentBoldTitles key={index} data={block} />
             case "Page_Pagecomponents_PageComponentsBlocks_ContentWysiwygs_ContentWysiwygsSections_Content2ColumnsLogo":
               return <Content2ColumnsLogo key={index} data={block} />
+            case "Page_Pagecomponents_PageComponentsBlocks_ContentWysiwygs_ContentWysiwygsSections_SimpleContentButton":
+              return <SimpleContentButton key={index} data={block} />
             default:
               return <p>Cannot find this component {block.fieldGroupName}</p>
           }
