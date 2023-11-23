@@ -670,6 +670,17 @@ export const homeQuery = graphql`
 
               ##
               ##
+              ## displayTeamMembers
+              ##
+              ##
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_DisplayContentBlocks_DisplayContentBlocksSections_DisplayTeamMembers {
+                fieldGroupName
+                display
+                teamTitle
+              }
+
+              ##
+              ##
               ##  END Display Content Blokcs types. END
               ##
               ##
