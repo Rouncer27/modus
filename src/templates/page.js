@@ -527,6 +527,40 @@ export const pageTempQuery = graphql`
 
               ##
               ##
+              ## ThreeStaggeredImages
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentBlocks_ContentBlocksSections_ThreeStaggeredImages {
+                fieldGroupName
+                imageOne {
+                  altText
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(width: 2000)
+                    }
+                  }
+                }
+                imageTwo {
+                  altText
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(width: 2000)
+                    }
+                  }
+                }
+                imageThree {
+                  altText
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(width: 2000)
+                    }
+                  }
+                }
+              }
+
+              ##
+              ##
               ## END
               ##
               ##
