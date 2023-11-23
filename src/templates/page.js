@@ -679,13 +679,24 @@ export const pageTempQuery = graphql`
 
               ##
               ##
-              ## displayTeamMembers
+              ## DisplayTeamMembers
               ##
               ##
               ... on WpPage_Pagecomponents_PageComponentsBlocks_DisplayContentBlocks_DisplayContentBlocksSections_DisplayTeamMembers {
                 fieldGroupName
                 display
                 teamTitle
+              }
+
+              ##
+              ##
+              ## DisplayContactForm
+              ##
+              ##
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_DisplayContentBlocks_DisplayContentBlocksSections_DisplayContactForm {
+                fieldGroupName
+                display
+                contactFormId
               }
 
               ##

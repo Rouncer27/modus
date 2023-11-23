@@ -681,6 +681,17 @@ export const homeQuery = graphql`
 
               ##
               ##
+              ## DisplayContactForm
+              ##
+              ##
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_DisplayContentBlocks_DisplayContentBlocksSections_DisplayContactForm {
+                fieldGroupName
+                display
+                contactFormId
+              }
+
+              ##
+              ##
               ##  END Display Content Blokcs types. END
               ##
               ##

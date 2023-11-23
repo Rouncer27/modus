@@ -3,6 +3,7 @@ import React from "react"
 import DisplayNewsPosts from "../../components/DisplayContentBlocks/DisplayNewsPosts"
 import DisplayTestimonials from "../../components/DisplayContentBlocks/DisplayTestimonials"
 import DisplayTeamMembers from "../../components/DisplayContentBlocks/DisplayTeamMembers"
+import DisplayContactForm from "../../components/DisplayContentBlocks/DisplayContactForm"
 
 const DisplayContentBlocksRenderer = ({ displayContentBlocks }) => {
   // console.log("DisplayContentBlocksRenderer: ", displayContentBlocks)
@@ -17,6 +18,8 @@ const DisplayContentBlocksRenderer = ({ displayContentBlocks }) => {
               return <DisplayTestimonials key={index} data={block} />
             case "Page_Pagecomponents_PageComponentsBlocks_DisplayContentBlocks_DisplayContentBlocksSections_DisplayTeamMembers":
               return <DisplayTeamMembers key={index} data={block} />
+            case "Page_Pagecomponents_PageComponentsBlocks_DisplayContentBlocks_DisplayContentBlocksSections_DisplayContactForm":
+              return <DisplayContactForm key={index} data={block} />
             default:
               return <p>Cannot find this component {block.fieldGroupName}</p>
           }
