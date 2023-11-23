@@ -809,6 +809,18 @@ export const pageTempQuery = graphql`
 
               ##
               ##
+              ## Wysiwyg2Columns
+              ##
+              ##
+
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_ContentWysiwygs_ContentWysiwygsSections_Wysiwyg2Columns {
+                fieldGroupName
+                columnLeft
+                columnRight
+              }
+
+              ##
+              ##
               ## END of section
               ##
               ##
