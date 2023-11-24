@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { colors, B1Black } from "../../../styles/helpers"
 
+// import { handleOnChange } from "./functions/formFunctions"
+
 const InputField = ({
   value,
   handler,
