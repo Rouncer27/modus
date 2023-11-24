@@ -4,6 +4,7 @@ import DisplayNewsPosts from "../../components/DisplayContentBlocks/DisplayNewsP
 import DisplayTestimonials from "../../components/DisplayContentBlocks/DisplayTestimonials"
 import DisplayTeamMembers from "../../components/DisplayContentBlocks/DisplayTeamMembers"
 import DisplayContactForm from "../../components/DisplayContentBlocks/DisplayContactForm"
+import DisplayAllNewsPostsRows from "../../components/DisplayContentBlocks/DisplayAllNewsPostsRows"
 
 const DisplayContentBlocksRenderer = ({ displayContentBlocks }) => {
   // console.log("DisplayContentBlocksRenderer: ", displayContentBlocks)
@@ -14,6 +15,8 @@ const DisplayContentBlocksRenderer = ({ displayContentBlocks }) => {
           switch (block.fieldGroupName) {
             case "Page_Pagecomponents_PageComponentsBlocks_DisplayContentBlocks_DisplayContentBlocksSections_DisplayNewsPosts":
               return <DisplayNewsPosts key={index} data={block} />
+            case "Page_Pagecomponents_PageComponentsBlocks_DisplayContentBlocks_DisplayContentBlocksSections_DisplayAllNewsPostsRows":
+              return <DisplayAllNewsPostsRows key={index} data={block} />
             case "Page_Pagecomponents_PageComponentsBlocks_DisplayContentBlocks_DisplayContentBlocksSections_DisplayTestimonials":
               return <DisplayTestimonials key={index} data={block} />
             case "Page_Pagecomponents_PageComponentsBlocks_DisplayContentBlocks_DisplayContentBlocksSections_DisplayTeamMembers":

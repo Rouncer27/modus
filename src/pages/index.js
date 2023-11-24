@@ -659,6 +659,17 @@ export const homeQuery = graphql`
 
               ##
               ##
+              ## DisplayAllNewsPostsRows
+              ##
+              ##
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_DisplayContentBlocks_DisplayContentBlocksSections_DisplayAllNewsPostsRows {
+                fieldGroupName
+                displayNewsPosts
+                title
+              }
+
+              ##
+              ##
               ## DisplayTestimonials
               ##
               ##

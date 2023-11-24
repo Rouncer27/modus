@@ -668,6 +668,17 @@ export const pageTempQuery = graphql`
 
               ##
               ##
+              ## DisplayAllNewsPostsRows
+              ##
+              ##
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_DisplayContentBlocks_DisplayContentBlocksSections_DisplayAllNewsPostsRows {
+                fieldGroupName
+                displayNewsPosts
+                title
+              }
+
+              ##
+              ##
               ## DisplayTestimonials
               ##
               ##
