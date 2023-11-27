@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { colors, B1Black } from "../../../styles/helpers"
+import { colors, B2Black } from "../../../styles/helpers"
 
 // import { handleOnChange } from "./functions/formFunctions"
 
@@ -62,7 +62,7 @@ const InputFieldStyled = styled.div`
   }
 
   label {
-    ${B1Black};
+    ${B2Black};
     display: block;
     width: 100%;
     line-height: 1.5;
@@ -76,7 +76,7 @@ const InputFieldStyled = styled.div`
     }
 
     .error-active {
-      ${B1Black};
+      ${B2Black};
       display: inline-block;
       color: red;
       padding-left: 2rem;
@@ -89,7 +89,7 @@ const InputFieldStyled = styled.div`
       margin-top: 0.25rem;
       margin-bottom: 0.5rem;
       padding: 0.9rem 1rem;
-      border-radius: 1rem;
+      border-radius: 0;
       color: #444;
       margin-left: 0;
       margin-right: 0;

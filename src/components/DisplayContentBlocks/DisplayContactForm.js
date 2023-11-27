@@ -139,6 +139,8 @@ const DisplayContactForm = ({ data }) => {
 const StyledSection = styled.div`
   .wrapper {
     ${standardWrapper};
+    margin-top: 0;
+    padding-top: 0;
   }
 
   form {
