@@ -9,6 +9,7 @@ import BaseWysiwyg from "../components/ContentWysiwygText/BaseWysiwyg/BaseWysiwy
 import styled from "styled-components"
 import { standardWrapper } from "../styles/helpers"
 import SliderThree from "../components/SliderBlocks/SliderThree"
+import PostNav from "../components/post/PostNav"
 
 const post = props => {
   const { post } = props.data
@@ -29,6 +30,7 @@ const post = props => {
       {!!post.postComponents.bottomSlider && (
         <SliderThree data={{ slides: post.postComponents.bottomSlider }} />
       )}
+      <PostNav data={{ prev: prevPost, next: nextPost }} />
     </Layout>
   )
 }

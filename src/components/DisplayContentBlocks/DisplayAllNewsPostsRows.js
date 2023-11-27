@@ -40,7 +40,7 @@ const DisplayAllNewsPostsRows = ({ data }) => {
           const imageAlt = post.postComponents.featuredImage.altText
           return (
             <StyledArticle className="article-link" key={post.id}>
-              <Link to={`/project-news/${post.slug}`}>
+              <Link to={`/projects-news/${post.slug}`}>
                 <div className="featured-image">
                   <GatsbyImage
                     image={imageDisplay}
