@@ -8,6 +8,7 @@ import ArticleTitle from "../components/post/ArticleTitle"
 import BaseWysiwyg from "../components/ContentWysiwygText/BaseWysiwyg/BaseWysiwyg"
 import styled from "styled-components"
 import { standardWrapper } from "../styles/helpers"
+import SliderThree from "../components/SliderBlocks/SliderThree"
 
 const post = props => {
   const { post } = props.data
@@ -22,9 +23,12 @@ const post = props => {
     <Layout>
       <Hero data={post.postComponents.featuredImage} />
       <ArticleWrapper>
-        <ArticleTitle title={post.title} />
+        <ArticleTitle title={post.title} date={post.date} />
         <BaseWysiwyg data={post.postComponents.mainContent} />
       </ArticleWrapper>
+      {!!post.postComponents.bottomSlider && (
+        <SliderThree data={{ slides: post.postComponents.bottomSlider }} />
+      )}
     </Layout>
   )
 }
@@ -44,6 +48,17 @@ export const query = graphql`
           localFile {
             childImageSharp {
               gatsbyImageData(width: 3000)
+            }
+          }
+        }
+
+        bottomSlider {
+          slide {
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData(width: 3000)
+              }
             }
           }
         }
