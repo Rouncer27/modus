@@ -94,6 +94,7 @@ const StyledSection = styled.section`
   .content {
     position: relative;
     width: 100%;
+    padding: 2rem 2rem 4rem 2rem;
     background-color: ${colors.colorPrimary};
 
     @media (min-width: 768px) {

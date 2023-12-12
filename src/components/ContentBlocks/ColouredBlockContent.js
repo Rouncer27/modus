@@ -22,7 +22,12 @@ const ColouredBlockContent = ({ data }) => {
 
 const StyledSection = styled.section`
   background-color: ${colors.colorSecondary};
+  margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+
+  @media (min-width: 768px) {
+    margin-top: 0;
+  }
 
   &.background-color-sky {
     background-color: ${colors.colorPrimary};

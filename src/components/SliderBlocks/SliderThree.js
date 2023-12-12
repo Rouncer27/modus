@@ -34,6 +34,8 @@ const SliderThree = ({ data }) => {
         breakpoint: 768,
         settings: {
           centerPadding: "0px",
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
     ],
