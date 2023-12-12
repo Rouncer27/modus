@@ -52,10 +52,12 @@ const StyledSection = styled.div`
 `
 
 const SingleLogo = styled.div`
-  width: calc(50%);
+  width: calc(50% - 2rem);
+  margin: 1rem;
 
   @media (min-width: 768px) {
-    width: calc(25%);
+    width: calc(25% - 4rem);
+    margin: 2rem;
   }
 
   @media (min-width: 1025px) {

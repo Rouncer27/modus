@@ -80,7 +80,7 @@ const StyledSection = styled.section`
     .box-link {
       margin-top: 2.5rem;
 
-      @media (min-width: 768px) {
+      @media (min-width: 1025px) {
         margin-top: 0;
         margin-right: 0.75rem;
         margin-left: 0.75rem;
@@ -88,20 +88,20 @@ const StyledSection = styled.section`
       }
 
       &:nth-of-type(3n + 1) {
-        @media (min-width: 768px) {
+        @media (min-width: 1025px) {
           margin-right: 1.5rem;
           margin-left: 0;
         }
       }
 
       &:nth-of-type(3n + 2) {
-        @media (min-width: 768px) {
+        @media (min-width: 1025px) {
           margin-top: 15rem;
         }
       }
 
       &:nth-of-type(3n + 3) {
-        @media (min-width: 768px) {
+        @media (min-width: 1025px) {
           margin-right: 0;
           margin-left: 1.5rem;
         }

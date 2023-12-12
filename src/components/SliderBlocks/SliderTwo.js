@@ -24,12 +24,16 @@ const settings = {
       breakpoint: 1025,
       settings: {
         centerPadding: "0px",
+        slidesToShow: 3,
+        slidesToScroll: 1,
       },
     },
     {
       breakpoint: 768,
       settings: {
         centerPadding: "0px",
+        slidesToShow: 1,
+        slidesToScroll: 1,
       },
     },
   ],
