@@ -94,11 +94,17 @@ const StyledSection = styled.section`
 `
 
 const SingleTeam = styled.div`
-  width: 100%;
+  width: calc(100% - 2rem);
+  margin: 1rem;
   position: relative;
   text-align: center;
 
   @media (min-width: 768px) {
+    width: calc(50% - 2rem);
+    margin: 1rem;
+  }
+
+  @media (min-width: 1025px) {
     width: calc(33.333333% - 2rem);
     margin: 1rem;
   }

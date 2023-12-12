@@ -41,7 +41,11 @@ const ContentTwoColumns = ({ data }) => {
 }
 
 const StyledSection = styled.section`
-  padding: 9rem 0;
+  padding: 4.5rem 0;
+
+  @media (min-width: 768px) {
+    padding: 9rem 0;
+  }
 
   .wrapper {
     ${medWrapper};

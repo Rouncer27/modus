@@ -64,11 +64,15 @@ const StyledSection = styled.div`
       }
 
       &.col-1 {
-        margin-right: 3rem;
+        @media (min-width: 768px) {
+          margin-right: 3rem;
+        }
       }
 
       &.col-2 {
-        margin-left: 3rem;
+        @media (min-width: 768px) {
+          margin-left: 3rem;
+        }
       }
 
       p {
