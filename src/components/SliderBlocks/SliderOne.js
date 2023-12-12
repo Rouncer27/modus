@@ -81,12 +81,12 @@ const StyledSection = styled.section`
     display: inline-block !important;
     position: absolute;
     left: 5%;
-    bottom: 30%;
+    bottom: 10%;
     width: auto !important;
     z-index: 10;
 
     @media (min-width: 768px) {
-      bottom: 22.5%;
+      bottom: 12%;
       left: 4rem;
     }
 
@@ -145,7 +145,7 @@ const StyledSection = styled.section`
 
 const StyledSlide = styled.div`
   position: relative;
-  min-height: 45rem;
+  min-height: 35rem;
 
   @media (min-width: 768px) {
     min-height: auto;

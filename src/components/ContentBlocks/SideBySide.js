@@ -50,11 +50,13 @@ const StyledSection = styled.section`
     align-items: center;
     justify-content: center;
     width: 100%;
+    padding: 5rem 0;
     text-align: center;
 
     @media (min-width: 768px) {
       width: calc(45% - 0.5rem);
       margin-right: 0.5rem;
+      padding: 0;
     }
 
     @media (min-width: 815px) {

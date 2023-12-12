@@ -165,16 +165,30 @@ const StyledFooter = styled.footer`
     margin-bottom: 5rem;
 
     .footer-logo {
-      width: 15%;
+      width: 100%;
+
+      @media (min-width: 768px) {
+        width: 15%;
+      }
 
       &__wrapper {
+        margin: 0 auto 2.5rem auto;
         max-width: 20rem;
+
+        @media (min-width: 768px) {
+        }
       }
     }
 
     .foot-nav-links {
-      width: calc(65% - 6rem);
-      margin-left: 6rem;
+      width: calc(100%);
+      margin-bottom: 2.5rem;
+
+      @media (min-width: 768px) {
+        width: calc(65% - 6rem);
+        margin-left: 6rem;
+        margin-bottom: 0;
+      }
 
       nav {
         width: 100%;
@@ -186,9 +200,15 @@ const StyledFooter = styled.footer`
 
           li {
             ${B3White};
-            width: calc(100% / 4);
-            margin-bottom: 0.5rem;
-            text-align: left;
+            width: calc(100% / 1);
+            margin-bottom: 1.5rem;
+            text-align: center;
+
+            @media (min-width: 768px) {
+              width: calc(100% / 4);
+              margin-bottom: 0.5rem;
+              text-align: left;
+            }
 
             a {
               ${B3White};
@@ -205,7 +225,11 @@ const StyledFooter = styled.footer`
 
     .footer-social {
       display: flex;
-      width: 20%;
+      width: 100%;
+
+      @media (min-width: 768px) {
+        width: 20%;
+      }
 
       &__links {
         width: 100%;
@@ -215,6 +239,9 @@ const StyledFooter = styled.footer`
         width: 100%;
         max-width: 12.5rem;
         margin-top: -2.75rem;
+
+        @media (min-width: 768px) {
+        }
       }
     }
   }

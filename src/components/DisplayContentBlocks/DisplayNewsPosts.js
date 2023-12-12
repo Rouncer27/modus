@@ -75,6 +75,11 @@ const StyledSection = styled.section`
   }
 
   .article-link {
+    width: calc((100% / 2) - 0.5rem);
+    margin-top: 0.5rem;
+    margin-right: 0.25rem;
+    margin-left: 0.25rem;
+
     @media (min-width: 768px) {
       margin-top: 0;
       margin-right: 0.25rem;
@@ -114,6 +119,11 @@ const StyledSection = styled.section`
 
 const StyledArticle = styled.article`
   position: relative;
+  height: 50rem;
+
+  @media (min-width: 768px) {
+    height: 65rem;
+  }
 
   @media (min-width: 1025px) {
     height: 85rem;
@@ -130,13 +140,25 @@ const StyledArticle = styled.article`
     h2 {
       ${H2White};
       position: absolute;
-      top: 7.5rem;
-      right: -77rem;
+      top: 4rem;
+      right: -30rem;
       margin: 0;
-      width: 80rem;
+      width: 35rem;
       transform-origin: center left;
       transform: rotate(90deg) translateX(0%);
       text-transform: uppercase;
+
+      @media (min-width: 768px) {
+        width: 60rem;
+        top: 6.5rem;
+        right: -56rem;
+      }
+
+      @media (min-width: 1025px) {
+        width: 80rem;
+        top: 7.5rem;
+        right: -76rem;
+      }
     }
   }
 
@@ -157,12 +179,6 @@ const StyledArticle = styled.article`
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 101%;
     height: 100%;
 
     .gatsby-image-wrapper {

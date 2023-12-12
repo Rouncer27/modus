@@ -30,13 +30,13 @@ const StyledIcon = styled.li`
   a {
     display: block;
     position: relative;
-    width: 4rem;
-    height: 4rem;
+    width: 6rem;
+    height: 6rem;
     border-radius: 0.5rem;
 
     @media (min-width: 768px) {
-      width: 2rem;
-      height: 2rem;
+      width: 4rem;
+      height: 4rem;
     }
     @media (min-width: 1025px) {
       width: 3.6rem;
@@ -62,15 +62,15 @@ const StyledIcon = styled.li`
 
     svg {
       display: block;
-      width: 4rem;
-      height: 4rem;
+      width: 6rem;
+      height: 6rem;
       margin: auto;
       transition: all 0.3s ease-out;
       fill: ${colors.white};
 
       @media (min-width: 768px) {
-        width: 2rem;
-        height: 2rem;
+        width: 4rem;
+        height: 4rem;
       }
       @media (min-width: 1025px) {
         width: 3.6rem;
