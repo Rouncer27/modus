@@ -26,8 +26,12 @@ const ContentSimple = ({ data }) => {
 }
 
 const StyledSection = styled.section`
-  padding: 7.5rem;
+  padding: 2rem;
   text-align: center;
+
+  @media (min-width: 768px) {
+    padding: 7.5rem;
+  }
 
   .wrapper {
     ${standardWrapper};
