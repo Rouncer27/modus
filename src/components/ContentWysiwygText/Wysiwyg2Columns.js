@@ -31,11 +31,15 @@ const StyledSection = styled.section`
     }
 
     &-left {
-      margin-right: 4.5rem;
+      @media (min-width: 768px) {
+        margin-right: 4.5rem;
+      }
     }
 
     &-right {
-      margin-left: 4.5rem;
+      @media (min-width: 768px) {
+        margin-left: 4.5rem;
+      }
     }
   }
 `
