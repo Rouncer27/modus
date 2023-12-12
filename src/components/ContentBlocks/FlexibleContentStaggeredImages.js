@@ -147,26 +147,46 @@ const StyledSection = styled.section`
     flex-wrap: wrap;
     justify-content: flex-start;
     width: calc(100%);
+    margin-top: 3rem;
 
     @media (min-width: 768px) {
       width: calc(55%);
+      margin-top: 0;
     }
 
     &__top {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
-      width: calc(100% - 18rem);
-      margin-right: 18rem;
+      width: calc(100%);
       margin-bottom: 0.5rem;
+
+      @media (min-width: 768px) {
+        width: calc(100% - 7.5rem);
+        margin-right: 7.5rem;
+      }
+
+      @media (min-width: 1025px) {
+        width: calc(100% - 18rem);
+        margin-right: 18rem;
+      }
     }
 
     &__bot {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
-      width: calc(100% - 18rem);
-      margin-left: 18rem;
+      width: calc(100%);
+
+      @media (min-width: 768px) {
+        width: calc(100% - 7.5rem);
+        margin-left: 7.5rem;
+      }
+
+      @media (min-width: 1025px) {
+        width: calc(100% - 18rem);
+        margin-left: 18rem;
+      }
     }
 
     .single-image {

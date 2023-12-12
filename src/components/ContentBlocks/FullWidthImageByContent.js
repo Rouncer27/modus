@@ -52,9 +52,11 @@ const StyledSection = styled.section`
 
   .image {
     width: 100%;
+    margin-bottom: 2.5rem;
 
     @media (min-width: 768px) {
       width: calc(40%);
+      margin-bottom: 0;
     }
 
     @media (min-width: 1025px) {
@@ -64,16 +66,19 @@ const StyledSection = styled.section`
 
   .content {
     width: 100%;
+    padding: 0 2rem;
 
     @media (min-width: 768px) {
       width: calc(60% - 4.5rem);
       max-width: 65rem;
       margin-right: auto;
       margin-left: 4.5rem;
+      padding: 0 2rem;
     }
 
     @media (min-width: 1025px) {
       width: calc(65% - 4.5rem);
+      padding: 0;
     }
 
     &__title {

@@ -29,9 +29,21 @@ const ColouredContentTopImage = ({ data }) => {
 
 const StyledSection = styled.section`
   position: relative;
-  margin-top: 25rem;
-  padding-top: 15rem;
+  margin-top: 10rem;
+  padding-top: 10rem;
   padding-bottom: 6rem;
+
+  @media (min-width: 768px) {
+    margin-top: 15rem;
+    padding-top: 15rem;
+    padding-bottom: 6rem;
+  }
+
+  @media (min-width: 1025px) {
+    margin-top: 25rem;
+    padding-top: 15rem;
+    padding-bottom: 6rem;
+  }
 
   &.background-green {
     background-color: ${colors.colorSecondary};
@@ -39,12 +51,20 @@ const StyledSection = styled.section`
 
   .image {
     position: absolute;
-    top: -15rem;
+    top: -7.5rem;
     right: 0;
     left: 0;
     width: 100%;
     max-width: 100rem;
     margin: 0 auto;
+
+    @media (min-width: 768px) {
+      top: -10rem;
+    }
+
+    @media (min-width: 1025px) {
+      top: -15rem;
+    }
   }
 
   .wrapper {
@@ -53,9 +73,10 @@ const StyledSection = styled.section`
 
   .content {
     width: 100%;
-
-    columns: 2;
-    column-gap: 4rem;
+    @media (min-width: 768px) {
+      columns: 2;
+      column-gap: 4rem;
+    }
 
     p {
       ${B1White};
