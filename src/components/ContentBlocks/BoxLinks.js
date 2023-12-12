@@ -126,17 +126,23 @@ const BoxLink = styled.div`
   justify-content: center;
   align-items: stretch;
   width: 100%;
+  margin-bottom: 2.5rem;
 
   @media (min-width: 768px) {
     width: calc(50% - 2rem);
+    margin-bottom: 0;
   }
 
   &:nth-of-type(1n + 2) {
-    margin-left: 2rem;
+    @media (min-width: 768px) {
+      margin-left: 2rem;
+    }
   }
 
   &:nth-of-type(2n + 1) {
-    margin-right: 2rem;
+    @media (min-width: 768px) {
+      margin-right: 2rem;
+    }
   }
 
   .bg-image {
@@ -167,8 +173,16 @@ const BoxLink = styled.div`
 
     &__inner {
       margin: 2rem;
-      padding: 4rem 8rem;
+      padding: 2rem 4rem;
       border: solid 0.1rem #fff;
+
+      @media (min-width: 768px) {
+        padding: 2rem 4rem;
+      }
+
+      @media (min-width: 1025px) {
+        padding: 4rem 8rem;
+      }
 
       h3 {
         ${H2White};

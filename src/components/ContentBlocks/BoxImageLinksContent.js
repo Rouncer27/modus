@@ -79,6 +79,7 @@ const StyledSection = styled.section`
 
     .box-link {
       margin-top: 2.5rem;
+      width: 100%;
 
       @media (min-width: 1025px) {
         margin-top: 0;
@@ -112,6 +113,32 @@ const StyledSection = styled.section`
 
 const StyledLinkBox = styled.div`
   position: relative;
+  height: 40rem;
+
+  @media (min-width: 768px) {
+    height: 40rem;
+  }
+
+  @media (min-width: 1025px) {
+    height: 60rem;
+  }
+
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    .gatsby-image-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
 
   .content {
     position: absolute;
