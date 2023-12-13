@@ -236,11 +236,13 @@ const StyledFooter = styled.footer`
       }
 
       &__icon {
+        display: none;
         width: 100%;
         max-width: 12.5rem;
         margin-top: -2.75rem;
 
         @media (min-width: 768px) {
+          display: block;
         }
       }
     }

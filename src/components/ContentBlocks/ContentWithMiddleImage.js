@@ -54,14 +54,17 @@ const ContentWithMiddleImage = ({ data }) => {
 
 const StyledSection = styled.section`
   margin-top: 2rem;
-  background: linear-gradient(
-    to right,
-    #333333 0%,
-    #333333 50%,
-    ${colors.colorSecondary} 50%,
-    ${colors.colorSecondary} 100%
-  );
+  background: ${colors.colorSecondary};
 
+  @media (min-width: 768px) {
+    background: linear-gradient(
+      to right,
+      #333333 0%,
+      #333333 50%,
+      ${colors.colorSecondary} 50%,
+      ${colors.colorSecondary} 100%
+    );
+  }
   .wrapper {
     ${BigWrapper};
     align-items: center;
