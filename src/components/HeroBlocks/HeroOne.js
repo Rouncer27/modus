@@ -29,6 +29,7 @@ const HeroOne = ({ data }) => {
           />
         </div>
       </div>
+      <div className="overlay" />
     </StyledSection>
   )
 }
@@ -48,6 +49,21 @@ const StyledSection = styled.section`
   @media (min-width: 1250px) {
     height: 100vh;
     min-height: 70rem;
+  }
+
+  .overlay {
+    background: linear-gradient(to bottom, #fff 0%, transparent 40%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+
+    @media (min-width: 768px) {
+      display: none;
+      background: linear-gradient(to bottom, #fff 0%, transparent 30%);
+    }
   }
 
   .hero-image {

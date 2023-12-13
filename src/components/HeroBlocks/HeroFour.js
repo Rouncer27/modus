@@ -28,7 +28,7 @@ const HeroFour = ({ data }) => {
 
 const StyledSection = styled.section`
   position: relative;
-  height: 30rem;
+  height: 40rem;
 
   @media (min-width: 768px) {
     height: 35rem;
@@ -44,13 +44,17 @@ const StyledSection = styled.section`
   }
 
   .overlay {
-    background: linear-gradient(to bottom, #fff 0%, transparent 30%);
+    background: linear-gradient(to bottom, #fff 0%, transparent 60%);
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 100;
+
+    @media (min-width: 768px) {
+      background: linear-gradient(to bottom, #fff 0%, transparent 30%);
+    }
   }
 
   .hero-title {

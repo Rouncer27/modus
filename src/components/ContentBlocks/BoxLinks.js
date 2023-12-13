@@ -58,7 +58,6 @@ const StyledSection = styled.section`
 
     h2 {
       ${H3Black};
-      text-decoration: underline;
       color: rgba(0, 0, 0, 0.48);
     }
   }
