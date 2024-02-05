@@ -91,7 +91,7 @@ const DisplayAllNewsPostsRows = ({ data }) => {
       </div>
       <div className="wrapper">
         <div className="posts-rest">
-          {postsData.posts.nodes.map((post, index) => {
+          {postsData.postsRest.nodes.map((post, index) => {
             const imageDisplay = getImage(
               post.postComponents.featuredImage.localFile.childImageSharp
                 .gatsbyImageData
