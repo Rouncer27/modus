@@ -18,17 +18,23 @@ const HeroOne = ({ data }) => {
           formats={["auto", "webp", "avif"]}
         />
       </div>
-      <div className="hero-content">
-        <div className="hero-content__inner">
-          <div className="title">
-            <h2 dangerouslySetInnerHTML={{ __html: data.heroContent.title }} />
+      {data.heroContent.title && (
+        <div className="hero-content">
+          <div className="hero-content__inner">
+            <div className="title">
+              <h2
+                dangerouslySetInnerHTML={{ __html: data.heroContent.title }}
+              />
+            </div>
+            {data.heroContent.content && (
+              <div
+                className="content"
+                dangerouslySetInnerHTML={{ __html: data.heroContent.content }}
+              />
+            )}
           </div>
-          <div
-            className="content"
-            dangerouslySetInnerHTML={{ __html: data.heroContent.content }}
-          />
         </div>
-      </div>
+      )}
       <div className="overlay" />
     </StyledSection>
   )
