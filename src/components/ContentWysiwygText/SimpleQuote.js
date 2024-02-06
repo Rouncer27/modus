@@ -11,9 +11,11 @@ const SimpleQuote = ({ data }) => {
           className="quote"
           dangerouslySetInnerHTML={{ __html: data.quote }}
         />
-        <div className="author">
-          <p>{data.author}</p>
-        </div>
+        {data.author && (
+          <div className="author">
+            <p>{data.author}</p>
+          </div>
+        )}
       </div>
     </StyledSection>
   )
