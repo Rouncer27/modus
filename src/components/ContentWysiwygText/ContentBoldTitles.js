@@ -6,14 +6,18 @@ const ContentBoldTitles = ({ data }) => {
   return (
     <StyledSection>
       <div className="wrapper">
-        <div className="main-sec">
-          <div className="main-sec__title">
-            <h2>{data.mainTitle}</h2>
+        {!!data.mainTitle || !!data.openingContent ? (
+          <div className="main-sec">
+            {!!data.mainTitle && (
+              <div className="main-sec__title">
+                <h2>{data.mainTitle}</h2>
+              </div>
+            )}
+            {!!data.openingContent && (
+              <div dangerouslySetInnerHTML={{ __html: data.openingContent }} />
+            )}
           </div>
-          {!!data.openingContent && (
-            <div dangerouslySetInnerHTML={{ __html: data.openingContent }} />
-          )}
-        </div>
+        ) : null}
 
         <div className="content-sec">
           {data.contentSections.map((sec, index) => {
