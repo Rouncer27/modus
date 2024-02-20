@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { B1Black, medWrapper } from "../../styles/helpers"
+import { B1Black, H2Black, medWrapper } from "../../styles/helpers"
 
 const Content2ColumnsLogo = ({ data }) => {
   const imageDisplay = getImage(
@@ -12,13 +12,18 @@ const Content2ColumnsLogo = ({ data }) => {
     <StyledSection>
       <div className="wrapper">
         <div className="logo">
-          <div className="logo__wrapper">
-            <GatsbyImage
-              image={imageDisplay}
-              alt={imageAlt}
-              layout="fullWidth"
-              formats={["auto", "webp", "avif"]}
-            />
+          <div className="logo__container">
+            <div className="logo__wrapper">
+              <GatsbyImage
+                image={imageDisplay}
+                alt={imageAlt}
+                layout="fullWidth"
+                formats={["auto", "webp", "avif"]}
+              />
+            </div>
+            <div className="logo__container--title">
+              <h2>MODUS C.A.R.E.S</h2>
+            </div>
           </div>
         </div>
         <div className="content">
@@ -43,6 +48,21 @@ const StyledSection = styled.div`
 
   .logo {
     width: 100%;
+
+    &__container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      &--title {
+        width: calc(100% - 12rem);
+        padding-left: 4rem;
+
+        h2 {
+          ${H2Black};
+        }
+      }
+    }
 
     &__wrapper {
       max-width: 11.7rem;
