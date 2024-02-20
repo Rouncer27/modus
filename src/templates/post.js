@@ -16,15 +16,19 @@ const post = props => {
   const prevPost = props.pageContext.prev
   const nextPost = props.pageContext.next
 
-  console.log("post", post)
-  console.log("prevPost", prevPost)
-  console.log("nextPost", nextPost)
+  // console.log("post", post)
+  // console.log("prevPost", prevPost)
+  // console.log("nextPost", nextPost)
 
   return (
     <Layout>
       <Hero data={post.postComponents.featuredImage} />
       <ArticleWrapper>
-        <ArticleTitle title={post.title} date={post.date} />
+        <ArticleTitle
+          title={post.title}
+          subTitle={post.postComponents.subTitleLocation}
+          date={post.date}
+        />
         <BaseWysiwyg data={post.postComponents.mainContent} />
       </ArticleWrapper>
       {!!post.postComponents.bottomSlider && (
@@ -43,6 +47,7 @@ export const query = graphql`
   query singlePostQuery($slug: String!) {
     post: wpPost(slug: { eq: $slug }) {
       postComponents {
+        subTitleLocation
         excerpt
         mainContent
         featuredImage {

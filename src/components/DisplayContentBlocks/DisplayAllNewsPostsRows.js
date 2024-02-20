@@ -10,6 +10,8 @@ import {
   standardWrapper,
   medWrapper,
   H3White,
+  H4White,
+  B1White,
 } from "../../styles/helpers"
 
 const getData = graphql`
@@ -20,6 +22,7 @@ const getData = graphql`
         id
         slug
         postComponents {
+          subTitleLocation
           excerpt
           featuredImage {
             altText
@@ -39,6 +42,7 @@ const getData = graphql`
         id
         slug
         postComponents {
+          subTitleLocation
           featuredImage {
             altText
             localFile {
@@ -72,6 +76,7 @@ const DisplayAllNewsPostsRows = ({ data }) => {
               <Link to={`/projects-news/${post.slug}`}>
                 <div className="article-title">
                   <h2>{post.title}</h2>
+                  <h3>{post.postComponents.subTitleLocation}</h3>
                 </div>
                 <div className="featured-image">
                   <GatsbyImage
@@ -111,6 +116,7 @@ const DisplayAllNewsPostsRows = ({ data }) => {
                   <div className="article-excerpt">
                     <div className="article-title">
                       <h2>{post.title}</h2>
+                      <h3>{post.postComponents.subTitleLocation}</h3>
                     </div>
                   </div>
                 </Link>
@@ -198,35 +204,31 @@ const StyledIntroArticle = styled.article`
   }
 
   .article-title {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
     position: absolute;
-    top: 0;
+    top: 10rem;
     left: 0;
-    right: 0;
-    bottom: 0;
+    right: 1.5rem;
+    bottom: 10rem;
     z-index: 100;
-
     h2 {
       ${H2White};
-      position: absolute;
-      top: 4rem;
-      right: -30rem;
-      margin: 0;
-      width: 35rem;
-      transform-origin: center left;
-      transform: rotate(90deg) translateX(0%);
+      margin-top: 2rem;
+      text-orientation: sideways;
+      writing-mode: vertical-rl;
       text-transform: uppercase;
+    }
 
-      @media (min-width: 768px) {
-        width: 60rem;
-        top: 6.5rem;
-        right: -56rem;
-      }
-
-      @media (min-width: 1025px) {
-        width: 80rem;
-        top: 7.5rem;
-        right: -76rem;
-      }
+    h3 {
+      ${H3White};
+      margin-top: 2rem;
+      text-orientation: sideways;
+      writing-mode: vertical-rl;
+      text-transform: uppercase;
     }
   }
 
@@ -287,6 +289,12 @@ const StyledArticle = styled.article`
     background-color: rgba(0, 0, 0, 0.3);
     h2 {
       ${H3White};
+      margin-bottom: 0;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      ${B1White};
       text-transform: uppercase;
     }
   }

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { H1White, H2White } from "../../styles/helpers"
+import { H1White, H2White, H3White } from "../../styles/helpers"
 
 const getData = graphql`
   {
@@ -12,6 +12,7 @@ const getData = graphql`
         id
         slug
         postComponents {
+          subTitleLocation
           featuredImage {
             altText
             localFile {
@@ -42,6 +43,7 @@ const DisplayNewsPosts = ({ data }) => {
               <Link to={`/projects-news/${post.slug}`}>
                 <div className="article-title">
                   <h2>{post.title}</h2>
+                  <h3>{post.postComponents.subTitleLocation}</h3>
                 </div>
                 <div className="featured-image">
                   <GatsbyImage
@@ -130,35 +132,32 @@ const StyledArticle = styled.article`
   }
 
   .article-title {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
     position: absolute;
-    top: 0;
+    top: 10rem;
     left: 0;
-    right: 0;
-    bottom: 0;
+    right: 1.5rem;
+    bottom: 10rem;
     z-index: 100;
 
     h2 {
       ${H2White};
-      position: absolute;
-      top: 4rem;
-      right: -30rem;
-      margin: 0;
-      width: 35rem;
-      transform-origin: center left;
-      transform: rotate(90deg) translateX(0%);
+      margin-top: 2rem;
+      text-orientation: sideways;
+      writing-mode: vertical-rl;
       text-transform: uppercase;
+    }
 
-      @media (min-width: 768px) {
-        width: 60rem;
-        top: 6.5rem;
-        right: -56rem;
-      }
-
-      @media (min-width: 1025px) {
-        width: 80rem;
-        top: 7.5rem;
-        right: -76rem;
-      }
+    h3 {
+      ${H3White};
+      margin-top: 2rem;
+      text-orientation: sideways;
+      writing-mode: vertical-rl;
+      text-transform: uppercase;
     }
   }
 
