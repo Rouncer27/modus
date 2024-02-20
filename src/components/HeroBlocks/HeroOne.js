@@ -1,13 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import {
-  H1White,
-  H2White,
-  H3White,
-  colors,
-  medWrapper,
-} from "../../styles/helpers"
+import { H1White, H3White, colors, medWrapper } from "../../styles/helpers"
 
 const HeroOne = ({ data }) => {
   const imageDisplay = getImage(
@@ -24,23 +18,26 @@ const HeroOne = ({ data }) => {
           formats={["auto", "webp", "avif"]}
         />
       </div>
-      {data.heroContent.title && (
-        <div className="hero-content">
-          <div className="hero-content__inner">
-            <div className="title">
-              <h2
-                dangerouslySetInnerHTML={{ __html: data.heroContent.title }}
-              />
+      {data.heroContent.title ||
+        (data.heroContent.content && (
+          <div className="hero-content">
+            <div className="hero-content__inner">
+              {data.heroContent.title && (
+                <div className="title">
+                  <h2
+                    dangerouslySetInnerHTML={{ __html: data.heroContent.title }}
+                  />
+                </div>
+              )}
+              {data.heroContent.content && (
+                <div
+                  className="content"
+                  dangerouslySetInnerHTML={{ __html: data.heroContent.content }}
+                />
+              )}
             </div>
-            {data.heroContent.content && (
-              <div
-                className="content"
-                dangerouslySetInnerHTML={{ __html: data.heroContent.content }}
-              />
-            )}
           </div>
-        </div>
-      )}
+        ))}
       <div className="overlay" />
     </StyledSection>
   )
@@ -130,7 +127,7 @@ const StyledSection = styled.section`
       }
 
       h2 {
-        ${H2White};
+        ${H1White};
         margin: 0;
       }
     }
