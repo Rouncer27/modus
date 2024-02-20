@@ -1,7 +1,13 @@
 import React from "react"
 import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { H1White, H3White, colors, medWrapper } from "../../styles/helpers"
+import {
+  H1White,
+  H2White,
+  H3White,
+  colors,
+  medWrapper,
+} from "../../styles/helpers"
 
 const HeroOne = ({ data }) => {
   const imageDisplay = getImage(
@@ -124,7 +130,7 @@ const StyledSection = styled.section`
       }
 
       h2 {
-        ${H1White};
+        ${H2White};
         margin: 0;
       }
     }
