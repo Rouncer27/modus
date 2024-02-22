@@ -26,6 +26,9 @@ const StyledSection = styled.section`
 
   a {
     ${B3Black};
+    color: ${colors.colorSecondary};
+    font-weight: bold;
+    cursor: pointer;
 
     &:hover {
       color: ${colors.colorPrimary};
