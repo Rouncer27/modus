@@ -3,12 +3,15 @@ dotenv.config({ path: ".env" })
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `MODUS - Building beter for a better world.`,
+    description: `MODUS is a leader in Western Canada for our design, construction and delivery of prefabricated offsite building solutions for residential, commercial, institutional and industrial applications.`,
+    author: `@switchback4ever`,
+    siteUrl: `https://www.modus.ca/`,
+    metaImg: `src/images/social-media-default.png`,
+    siteLogo: `src/images/modus.png`,
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-styled-components`,
     {
@@ -38,6 +41,30 @@ module.exports = {
       resolve: "gatsby-source-wordpress",
       options: {
         url: process.env.WORDPRESS_URL,
+      },
+    },
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ["G"],
+      },
+      pluginConfig: {
+        head: true,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://modus.ca/",
+        sitemap: "https://modus.ca/sitemap-index.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://modus.ca/`,
       },
     },
     `gatsby-plugin-netlify`,
