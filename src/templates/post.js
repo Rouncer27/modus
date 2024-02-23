@@ -12,6 +12,7 @@ import SliderThree from "../components/SliderBlocks/SliderThree"
 import PostNav from "../components/post/PostNav"
 
 const post = props => {
+  const seoInfo = props.data.seoInfo
   const { post } = props.data
   const prevPost = props.pageContext.prev
   const nextPost = props.pageContext.next
@@ -22,6 +23,16 @@ const post = props => {
 
   return (
     <Layout>
+      <Seo
+        title={
+          seoInfo?.seoFields?.seoFieldsMetaTitle
+            ? seoInfo?.seoFields?.seoFieldsMetaTitle
+            : "MODUS - Building beter for a better world"
+        }
+        description={seoInfo?.seoFields?.seoFieldsMetaContent}
+        metaImg={seoInfo?.seoFields?.seoFieldsMetaImage?.mediaItemUrl}
+        location={props?.location?.pathname}
+      />
       <Hero data={post.postComponents.featuredImage} />
       <ArticleWrapper>
         <ArticleTitle
@@ -45,6 +56,16 @@ const ArticleWrapper = styled.article`
 
 export const query = graphql`
   query singlePostQuery($slug: String!) {
+    seoInfo: wpPost(slug: { eq: $slug }) {
+      seoFields {
+        seoFieldsMetaTitle
+        seoFieldsMetaContent
+        seoFieldsMetaImage {
+          mediaItemUrl
+        }
+      }
+    }
+
     post: wpPost(slug: { eq: $slug }) {
       postComponents {
         subTitleLocation

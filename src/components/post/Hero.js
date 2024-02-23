@@ -4,7 +4,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { H1Black, colors } from "../../styles/helpers"
 
 const Hero = ({ data }) => {
-  console.log("data", data)
   const imageDisplay = getImage(data.localFile.childImageSharp.gatsbyImageData)
   const imageAlt = data.altText
 

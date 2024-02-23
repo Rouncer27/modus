@@ -7,8 +7,6 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
 const SliderThree = ({ data }) => {
-  console.log("SliderThree", data)
-
   const slidesToShow = data.slides.length <= 3 ? data.slides.length - 1 : 3
   const settings = {
     slidesToShow: slidesToShow,

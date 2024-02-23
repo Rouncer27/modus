@@ -41,8 +41,6 @@ function Seo({ description, lang, meta, title, metaImg, location }) {
       : `${site.siteMetadata.siteUrl}/${backupDefaultFBImgUrl}`
   const canonicalUrl = `${site.siteMetadata.siteUrl}${location}`
 
-  console.log("metaDescription", metaDescription)
-
   return (
     <React.Fragment>
       <Helmet htmlAttributes={{ lang }}>

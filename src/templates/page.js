@@ -10,8 +10,6 @@ const page = props => {
   const pageComponentsBlocks =
     props?.data?.pageComponents?.pageComponents?.pageComponentsBlocks
 
-  console.log("props:", props)
-
   return (
     <Layout>
       <Seo
