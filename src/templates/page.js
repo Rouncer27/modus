@@ -9,13 +9,16 @@ const page = props => {
   const seoInfo = props.data.seoInfo
   const pageComponentsBlocks =
     props?.data?.pageComponents?.pageComponents?.pageComponentsBlocks
+
+  console.log("props:", props)
+
   return (
     <Layout>
       <Seo
-        title={seoInfo.seoFields.seoFieldsMetaTitle}
-        description={seoInfo.seoFields.seoFieldsMetaContent}
-        metaImg={seoInfo.seoFields.seoFieldsMetaImage.mediaItemUrl}
-        location={props.location.pathname}
+        title={seoInfo?.seoFields?.seoFieldsMetaTitle}
+        description={seoInfo?.seoFields?.seoFieldsMetaContent}
+        metaImg={seoInfo?.seoFields?.seoFieldsMetaImage?.mediaItemUrl}
+        location={props?.location?.pathname}
       />
       <BlockRenderer blocks={pageComponentsBlocks} />
     </Layout>

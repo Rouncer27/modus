@@ -6,20 +6,40 @@ import Seo from "../components/Seo"
 import BlockRenderer from "../Renderers/BlockRenderer/BlockRenderer"
 
 const IndexPage = props => {
+  const seoInfo = props.data.seoInfo
   const pageComponentsBlocks =
     props?.data?.pageComponents?.pageComponents?.pageComponentsBlocks
 
+  console.log(
+    "seoInfo.seoFields.seoFieldsMetaContent",
+    seoInfo.seoFields.seoFieldsMetaContent
+  )
+
   return (
     <Layout>
+      <Seo
+        title={seoInfo.seoFields.seoFieldsMetaTitle}
+        description={seoInfo.seoFields.seoFieldsMetaContent}
+        metaImg={seoInfo.seoFields.seoFieldsMetaImage.mediaItemUrl}
+        location={props.location.pathname}
+      />
       <BlockRenderer blocks={pageComponentsBlocks} />
     </Layout>
   )
 }
 
-export const Head = () => <Seo title="Home" />
-
 export const homeQuery = graphql`
   {
+    seoInfo: wpPage(slug: { eq: "home" }) {
+      seoFields {
+        seoFieldsMetaTitle
+        seoFieldsMetaContent
+        seoFieldsMetaImage {
+          mediaItemUrl
+        }
+      }
+    }
+
     pageComponents: wpPage(slug: { eq: "home" }) {
       pageComponents {
         fieldGroupName
