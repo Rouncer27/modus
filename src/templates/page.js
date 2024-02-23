@@ -18,7 +18,7 @@ const page = props => {
         title={
           seoInfo?.seoFields?.seoFieldsMetaTitle
             ? seoInfo?.seoFields?.seoFieldsMetaTitle
-            : "MODUS - Building beter for a better world - default."
+            : "MODUS - Building beter for a better world"
         }
         description={seoInfo?.seoFields?.seoFieldsMetaContent}
         metaImg={seoInfo?.seoFields?.seoFieldsMetaImage?.mediaItemUrl}
