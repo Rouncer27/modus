@@ -66,6 +66,15 @@ const StyledSection = styled.section`
       list-style-type: disc;
     }
   }
+
+  iframe {
+    width: 100%;
+    min-height: 35rem;
+
+    @media (min-width: 768px) {
+      min-height: 55vw;
+    }
+  }
 `
 
 export default BaseWysiwyg
