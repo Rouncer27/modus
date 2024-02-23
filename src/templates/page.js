@@ -6,10 +6,17 @@ import Seo from "../components/Seo"
 import BlockRenderer from "../Renderers/BlockRenderer/BlockRenderer"
 
 const page = props => {
+  const seoInfo = props.data.seoInfo
   const pageComponentsBlocks =
     props?.data?.pageComponents?.pageComponents?.pageComponentsBlocks
   return (
     <Layout>
+      <Seo
+        title={seoInfo.seoFields.seoFieldsMetaTitle}
+        description={seoInfo.seoFields.seoFieldsMetaContent}
+        metaImg={seoInfo.seoFields.seoFieldsMetaImage.mediaItemUrl}
+        location={props.location.pathname}
+      />
       <BlockRenderer blocks={pageComponentsBlocks} />
     </Layout>
   )
@@ -17,6 +24,16 @@ const page = props => {
 
 export const pageTempQuery = graphql`
   query pageTempPage($id: String!) {
+    seoInfo: wpPage(id: { eq: $id }) {
+      seoFields {
+        seoFieldsMetaTitle
+        seoFieldsMetaContent
+        seoFieldsMetaImage {
+          mediaItemUrl
+        }
+      }
+    }
+
     pageComponents: wpPage(id: { eq: $id }) {
       pageComponents {
         fieldGroupName
