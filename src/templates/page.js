@@ -15,7 +15,11 @@ const page = props => {
   return (
     <Layout>
       <Seo
-        title={seoInfo?.seoFields?.seoFieldsMetaTitle}
+        title={
+          seoInfo?.seoFields?.seoFieldsMetaTitle
+            ? seoInfo?.seoFields?.seoFieldsMetaTitle
+            : "MODUS - Building beter for a better world - default."
+        }
         description={seoInfo?.seoFields?.seoFieldsMetaContent}
         metaImg={seoInfo?.seoFields?.seoFieldsMetaImage?.mediaItemUrl}
         location={props?.location?.pathname}
