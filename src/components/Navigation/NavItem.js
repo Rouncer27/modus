@@ -55,7 +55,7 @@ const NavItemStyled = styled.li`
       right: 0;
       bottom: 0;
       width: 7.5rem;
-      height: 7.5rem;
+      height: 100%;
       background-color: transparent;
       font-size: 3rem;
       font-weight: bold;

@@ -101,9 +101,13 @@ const NavDrawer = styled.div`
   }
 
   &.active {
-    transform: translateX(-10%);
+    transform: translateX(0%);
     opacity: 1;
     z-index: 999999999;
+
+    @media (min-width: 768px) {
+      transform: translateX(-10%);
+    }
   }
 
   .main-nav-wrapper {
