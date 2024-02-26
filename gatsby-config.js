@@ -6,7 +6,7 @@ module.exports = {
     title: `MODUS - Building beter for a better world.`,
     description: `MODUS is a leader in Western Canada for our design, construction and delivery of prefabricated offsite building solutions for residential, commercial, institutional and industrial applications.`,
     author: `@switchback4ever`,
-    siteUrl: `https://www.modus.ca/`,
+    siteUrl: `https://modus.ca/`,
     metaImg: `src/images/social-media-default.png`,
     siteLogo: `src/images/modus.png`,
   },
