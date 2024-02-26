@@ -1,3 +1,12 @@
+# Redirect domain aliases to primary domain
+
+https:/www.modus.ca/* https://modus.ca/:splat 301!
+http://www.modus.ca/* https://modus.ca/:splat 301!
+
+# Optional: Redirect default Netlify subdomain to primary domain
+
+https://modusswb-version2.netlify.app/* https://modus.ca/:splat 301!
+
 /home /
 
 /modus-evolution /about-us
