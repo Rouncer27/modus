@@ -86,8 +86,8 @@ function Seo({ description, lang, meta, title, metaImg, location }) {
         datePublished="February 26, 2024"
         canonicalUrl="https://modus.ca/"
         author="@switchback4ever"
-        organization="Modus"
-        defaultTitle="Modus"
+        organization="MODUS Structures"
+        defaultTitle="MODUS Structures"
       />
     </React.Fragment>
   )
