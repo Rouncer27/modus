@@ -42,31 +42,31 @@ export default React.memo(
           {
             "@type": "OpeningHoursSpecification",
             dayOfWeek: ["Monday"],
-            opens: "8am",
+            opens: "7:30am",
             closes: "4pm",
           },
           {
             "@type": "OpeningHoursSpecification",
             dayOfWeek: ["Tuesday"],
-            opens: "8am",
+            opens: "7:30am",
             closes: "4pm",
           },
           {
             "@type": "OpeningHoursSpecification",
             dayOfWeek: ["Wednesday"],
-            opens: "8am",
+            opens: "7:30am",
             closes: "4pm",
           },
           {
             "@type": "OpeningHoursSpecification",
             dayOfWeek: ["Thursday"],
-            opens: "8am",
+            opens: "7:30am",
             closes: "4pm",
           },
           {
             "@type": "OpeningHoursSpecification",
             dayOfWeek: ["Friday"],
-            opens: "8am",
+            opens: "7:30am",
             closes: "4pm",
           },
           {
