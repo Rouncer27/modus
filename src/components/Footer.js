@@ -133,7 +133,7 @@ const Footer = () => {
 
           <div className="footer-copy">
             <p>
-              Modus Structures Inc © 2023. Designed, and developed by{" "}
+              MODUS Structures Inc © 2023. Designed, and developed by{" "}
               <a
                 target="_blank"
                 rel="noreferrer"
