@@ -19,7 +19,7 @@ export default React.memo(
       {
         "@context": "http://schema.org",
         "@type": "ProfessionalService",
-        "@id": "https://modus.com/",
+        "@id": "https://modus.ca/",
         name: "Modus Structures",
         alternateName: "Modus Structures",
         logo: logo,
