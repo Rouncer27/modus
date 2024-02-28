@@ -218,17 +218,21 @@ const StyledIntroArticle = styled.article`
     h2 {
       ${H2White};
       margin-top: 2rem;
+      padding: 1rem;
       text-orientation: sideways;
       writing-mode: vertical-rl;
       text-transform: uppercase;
+      background-color: rgba(0, 0, 0, 0.5);
     }
 
     h3 {
       ${H3White};
       margin-top: 2rem;
+      padding: 1rem;
       text-orientation: sideways;
       writing-mode: vertical-rl;
       text-transform: uppercase;
+      background-color: rgba(0, 0, 0, 0.5);
     }
   }
 
