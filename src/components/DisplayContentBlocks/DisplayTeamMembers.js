@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { B1White, H2Black, medWrapper } from "../../styles/helpers"
+import { B1White, B2Black, H2Black, medWrapper } from "../../styles/helpers"
 
 const getData = graphql`
   {
@@ -10,6 +10,7 @@ const getData = graphql`
       nodes {
         teamComponents {
           title
+          bio
           headShot {
             altText
             localFile {
@@ -45,19 +46,27 @@ const DisplayTeamMembers = ({ data }) => {
             const imageAlt = member.teamComponents.headShot.altText
             return (
               <SingleTeam key={index}>
-                <div>
+                <div className="team-image">
                   <GatsbyImage
                     image={imageDisplay}
                     alt={imageAlt}
                     layout="fullWidth"
                     formats={["auto", "webp", "avif"]}
                   />
+                  <div className="team-content">
+                    <p>
+                      <span>{member.title}</span>
+                      <span>{member.teamComponents.title}</span>
+                    </p>
+                  </div>
                 </div>
-                <div className="team-content">
-                  <p>
-                    <span>{member.title}</span>
-                    <span>{member.teamComponents.title}</span>
-                  </p>
+
+                <div className="team-bio">
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: member.teamComponents.bio,
+                    }}
+                  />
                 </div>
               </SingleTeam>
             )
@@ -109,22 +118,35 @@ const SingleTeam = styled.div`
     margin: 1rem;
   }
 
-  .team-content {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    padding: 1rem 2rem;
-    background-color: rgba(0, 88, 72, 0.84);
+  .team-image {
+    position: relative;
+
+    .team-content {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      padding: 1rem 2rem;
+      background-color: rgba(0, 88, 72, 0.84);
+
+      p {
+        ${B1White};
+        margin: 0;
+        padding: 0;
+
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .team-bio {
+    width: 100%;
+    margin-top: 2.5rem;
 
     p {
-      ${B1White};
-      margin: 0;
-      padding: 0;
-
-      span {
-        display: block;
-      }
+      ${B2Black};
     }
   }
 `
