@@ -21,10 +21,10 @@ const DisplaySalesForce = ({ data }) => {
           <input type="hidden" name="oid" value="00Dau00000627Es" />
           <input type="hidden" name="retURL" value="http://" />
           <InputFieldStyled size="half" position="start">
-            <label for="first_name">First Name</label>
+            <label htmlFor="first_name">First Name</label>
             <input
               id="first_name"
-              maxlength="40"
+              maxLength="40"
               name="first_name"
               size="20"
               type="text"
@@ -32,10 +32,10 @@ const DisplaySalesForce = ({ data }) => {
             <br />
           </InputFieldStyled>
           <InputFieldStyled size="half" position="end">
-            <label for="last_name">Last Name</label>
+            <label htmlFor="last_name">Last Name</label>
             <input
               id="last_name"
-              maxlength="80"
+              maxLength="80"
               name="last_name"
               size="20"
               type="text"
@@ -44,10 +44,10 @@ const DisplaySalesForce = ({ data }) => {
           </InputFieldStyled>
 
           <InputFieldStyled size="half" position="start">
-            <label for="email">Email</label>
+            <label htmlFor="email">Email</label>
             <input
               id="email"
-              maxlength="80"
+              maxLength="80"
               name="email"
               size="20"
               type="text"
@@ -56,10 +56,10 @@ const DisplaySalesForce = ({ data }) => {
           </InputFieldStyled>
 
           <InputFieldStyled size="half" position="end">
-            <label for="company">Company</label>
+            <label htmlFor="company">Company</label>
             <input
               id="company"
-              maxlength="40"
+              maxLength="40"
               name="company"
               size="20"
               type="text"
@@ -68,16 +68,16 @@ const DisplaySalesForce = ({ data }) => {
           </InputFieldStyled>
 
           <InputFieldStyled size="half" position="start">
-            <label for="city">City</label>
-            <input id="city" maxlength="40" name="city" size="20" type="text" />
+            <label htmlFor="city">City</label>
+            <input id="city" maxLength="40" name="city" size="20" type="text" />
             <br />
           </InputFieldStyled>
 
           <InputFieldStyled size="half" position="end">
-            <label for="phone">Phone</label>
+            <label htmlFor="phone">Phone</label>
             <input
               id="phone"
-              maxlength="40"
+              maxLength="40"
               name="phone"
               size="20"
               type="text"
@@ -86,7 +86,7 @@ const DisplaySalesForce = ({ data }) => {
           </InputFieldStyled>
 
           <TextareaFieldStyled size="full" position="start">
-            <label for="description">Description</label>
+            <label htmlFor="description">Description</label>
             <textarea name="description" rows={8}></textarea>
             <br />
           </TextareaFieldStyled>
