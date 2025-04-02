@@ -74,6 +74,8 @@ function Seo({ description, lang, meta, title, metaImg, location }) {
         <meta name="twitter:image" content={imgToUse} />
         {/* Google Ownership Verification */}
         <meta name="google-site-verification" content="" />
+        {/* Sales Fource */}
+        <meta httpEquiv="Content-type" content="text/html; charset=UTF-8" />
       </Helmet>
 
       <SchemaOrg

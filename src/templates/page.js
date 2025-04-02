@@ -734,6 +734,16 @@ export const pageTempQuery = graphql`
 
               ##
               ##
+              ## DisplaySalesForce
+              ##
+              ##
+              ... on WpPage_Pagecomponents_PageComponentsBlocks_DisplayContentBlocks_DisplayContentBlocksSections_DisplaySalesForce {
+                fieldGroupName
+                display
+              }
+
+              ##
+              ##
               ##  END Display Content Blokcs types. END
               ##
               ##

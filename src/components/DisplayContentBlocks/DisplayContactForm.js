@@ -45,6 +45,10 @@ const DisplayContactForm = ({ data }) => {
     })
   }
 
+  console.log("DisplayContactForm: ", data)
+
+  if (!data.display) return null
+
   return (
     <StyledSection>
       <div className="wrapper">
