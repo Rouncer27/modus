@@ -18,8 +18,8 @@ const DisplaySalesForce = ({ data }) => {
           action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dau00000627Es"
           method="POST"
         >
-          {/* <input type=hidden name="oid" value="00Dau00000627Es"/>
-            <input type=hidden name="retURL" value="http://"/> */}
+          <input type="hidden" name="oid" value="00Dau00000627Es" />
+          <input type="hidden" name="retURL" value="http://" />
           <InputFieldStyled size="half" position="start">
             <label for="first_name">First Name</label>
             <input
