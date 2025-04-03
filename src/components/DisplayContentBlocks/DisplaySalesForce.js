@@ -9,18 +9,10 @@ import {
 } from "../../styles/helpers"
 
 const DisplaySalesForce = ({ data }) => {
-  if (!data.display) return null
+  if (!data.display) return null // Render nothing if display hasn't been checked yet.
+
   const phoneInput = useRef(null)
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
-  const [hasMounted, setHasMounted] = useState(false)
-
-  useEffect(() => {
-    setHasMounted(true)
-  }, [])
-
-  if (!hasMounted) {
-    return null // Render nothing until the component has mounted
-  }
 
   useEffect(() => {
     phoneInput.current.addEventListener("input", function (e) {
@@ -28,11 +20,11 @@ const DisplaySalesForce = ({ data }) => {
     })
 
     // Check URL parameters for success status
-    const searchParams = new URLSearchParams(window.location.search)
-    if (searchParams.get("status") === "success") {
-      setShowSuccessMessage(true)
-    }
-  }, [location.search])
+    // const searchParams = new URLSearchParams(window.location.search)
+    // if (searchParams.get("status") === "success") {
+    //   setShowSuccessMessage(true)
+    // }
+  }, [])
 
   return (
     <StyledSection>
