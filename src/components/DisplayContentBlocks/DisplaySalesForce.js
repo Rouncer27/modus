@@ -14,17 +14,19 @@ const DisplaySalesForce = ({ data }) => {
   const phoneInput = useRef(null)
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
 
-  useEffect(() => {
-    phoneInput.current.addEventListener("input", function (e) {
-      this.value = this.value.replace(/[^0-9\s\-+]/g, "")
-    })
+  if (typeof window !== "undefined") {
+    useEffect(() => {
+      phoneInput.current.addEventListener("input", function (e) {
+        this.value = this.value.replace(/[^0-9\s\-+]/g, "")
+      })
 
-    // Check URL parameters for success status
-    // const searchParams = new URLSearchParams(window.location.search)
-    // if (searchParams.get("status") === "success") {
-    //   setShowSuccessMessage(true)
-    // }
-  }, [])
+      // Check URL parameters for success status
+      const searchParams = new URLSearchParams(window.location.search)
+      if (searchParams.get("status") === "success") {
+        setShowSuccessMessage(true)
+      }
+    }, [location.search])
+  }
 
   return (
     <StyledSection>
