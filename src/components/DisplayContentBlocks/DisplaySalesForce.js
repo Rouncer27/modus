@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
 import {
   standardWrapper,
@@ -10,6 +10,12 @@ import {
 
 const DisplaySalesForce = ({ data }) => {
   if (!data.display) return null
+  const phoneInput = useRef(null)
+  useEffect(() => {
+    phoneInput.current.addEventListener("input", function (e) {
+      this.value = this.value.replace(/[^0-9\s\-+]/g, "")
+    })
+  }, [])
 
   return (
     <StyledSection>
@@ -28,12 +34,11 @@ const DisplaySalesForce = ({ data }) => {
           <label htmlFor="first_name">First Name</label>
           <input
             id="first_name"
-            maxLength="40"
             name="first_name"
             size="20"
             type="text"
-            minlength="2"
-            maxlength="50"
+            minLength="2"
+            maxLength="50"
             required={true}
           />
           <br />
@@ -41,12 +46,11 @@ const DisplaySalesForce = ({ data }) => {
           <label htmlFor="last_name">Last Name</label>
           <input
             id="last_name"
-            maxLength="80"
             name="last_name"
             size="20"
             type="text"
-            minlength="1"
-            maxlength="50"
+            minLength="1"
+            maxLength="50"
             required={true}
           />
           <br />
@@ -54,7 +58,6 @@ const DisplaySalesForce = ({ data }) => {
           <label htmlFor="email">Email</label>
           <input
             id="email"
-            maxLength="80"
             name="email"
             size="20"
             type="email"
@@ -65,40 +68,33 @@ const DisplaySalesForce = ({ data }) => {
           <label htmlFor="company">Company</label>
           <input
             id="company"
-            maxLength="40"
             name="company"
             size="20"
             type="text"
-            maxlength="100"
+            maxLength="100"
           />
           <br />
 
           <label htmlFor="city">City</label>
-          <input
-            id="city"
-            maxLength="40"
-            name="city"
-            size="20"
-            type="text"
-            maxlength="50"
-          />
+          <input id="city" name="city" size="20" type="text" maxLength="50" />
           <br />
 
           <label htmlFor="phone">Phone</label>
           <input
+            ref={phoneInput}
             id="phone"
             name="phone"
             size="20"
             type="tel"
             pattern="^\+?[0-9][0-9\s-]{6,14}$"
-            minlength="7"
-            maxlength="15"
+            minLength="7"
+            maxLength="15"
             title="Enter a valid phone number with 7 to 15 digits, allowing spaces, dashes, and an optional leading plus sign."
           />
           <br />
 
           <label htmlFor="description">Description</label>
-          <textarea name="description" rows={8} maxlength="500"></textarea>
+          <textarea name="description" rows={8} maxLength="500"></textarea>
           <br />
 
           <input type="submit" name="submit" />
