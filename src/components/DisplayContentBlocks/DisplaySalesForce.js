@@ -31,7 +31,9 @@ const DisplaySalesForce = ({ data }) => {
             value="https://modus.ca/contact-us?status=success"
           />
 
-          <label htmlFor="first_name">First Name</label>
+          <label htmlFor="first_name">
+            First Name <span className="required">&#42;</span>
+          </label>
           <input
             id="first_name"
             name="first_name"
@@ -43,7 +45,9 @@ const DisplaySalesForce = ({ data }) => {
           />
           <br />
 
-          <label htmlFor="last_name">Last Name</label>
+          <label htmlFor="last_name">
+            Last Name <span className="required">&#42;</span>
+          </label>
           <input
             id="last_name"
             name="last_name"
@@ -55,7 +59,9 @@ const DisplaySalesForce = ({ data }) => {
           />
           <br />
 
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">
+            Email <span className="required">&#42;</span>
+          </label>
           <input
             id="email"
             name="email"
@@ -79,7 +85,9 @@ const DisplaySalesForce = ({ data }) => {
           <input id="city" name="city" size="20" type="text" maxLength="50" />
           <br />
 
-          <label htmlFor="phone">Phone</label>
+          <label htmlFor="phone">
+            Phone <span className="hint">(eg: +1-800-123-6789)</span>
+          </label>
           <input
             ref={phoneInput}
             id="phone"
@@ -147,6 +155,10 @@ const StyledSection = styled.div`
       display: inline-block;
       color: red;
       padding-left: 2rem;
+    }
+
+    .hint {
+      font-size: 1.2rem;
     }
   }
   input,
