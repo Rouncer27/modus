@@ -169,7 +169,6 @@ const StyledSection = styled.div`
 
     width: calc(100%);
     margin: 1rem auto;
-    padding: 1rem 0;
 
     @media (min-width: 768px) {
       width: calc(100% - 2rem);
