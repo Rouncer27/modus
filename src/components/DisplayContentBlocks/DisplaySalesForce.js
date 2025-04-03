@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import styled from "styled-components"
 import {
   standardWrapper,
@@ -11,15 +11,37 @@ import {
 const DisplaySalesForce = ({ data }) => {
   if (!data.display) return null
   const phoneInput = useRef(null)
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false)
+
   useEffect(() => {
     phoneInput.current.addEventListener("input", function (e) {
       this.value = this.value.replace(/[^0-9\s\-+]/g, "")
     })
-  }, [])
+    // Check URL parameters for success status
+    const searchParams = new URLSearchParams(window.location.search)
+    if (searchParams.get("status") === "success") {
+      setShowSuccessMessage(true)
+    }
+  }, [location.search])
 
   return (
     <StyledSection>
       <div className="wrapper">
+        {showSuccessMessage && (
+          <div className="success-message-modal">
+            <div className="success-message-modal-inner">
+              <p>Thank you! Your submission has been received successfully.</p>
+              <button
+                type="button"
+                onClick={() => {
+                  setShowSuccessMessage(false)
+                }}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
         <form
           action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dau00000627Es"
           method="POST"
@@ -117,6 +139,41 @@ const StyledSection = styled.div`
     ${standardWrapper};
     margin-top: 0;
     padding-top: 0;
+  }
+
+  .success-message-modal {
+    position: fixed;
+    z-index: 5000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.4);
+
+    &-inner {
+      background-color: ${colors.white};
+      width: calc(100% - 4rem);
+      padding: 5rem 2rem;
+      margin: auto;
+      text-align: center;
+
+      @media (min-width: 768px) {
+        width: 60rem;
+      }
+
+      p {
+        ${B1Black};
+      }
+
+      button {
+        ${BtnPrimaryGreen};
+        margin-top: 2rem;
+      }
+    }
   }
 
   form {
