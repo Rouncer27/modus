@@ -19,7 +19,11 @@ const DisplaySalesForce = ({ data }) => {
           method="POST"
         >
           <input type="hidden" name="oid" value="00Dau00000627Es" />
-          <input type="hidden" name="retURL" value="http://" />
+          <input
+            type="hidden"
+            name="retURL"
+            value="https://modus.ca/contact-us?status=success"
+          />
 
           <label htmlFor="first_name">First Name</label>
           <input
