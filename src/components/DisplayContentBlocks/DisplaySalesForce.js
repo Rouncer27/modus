@@ -14,19 +14,33 @@ const DisplaySalesForce = ({ data }) => {
   const phoneInput = useRef(null)
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
 
+  let location = null
   if (typeof window !== "undefined") {
-    useEffect(() => {
-      phoneInput.current.addEventListener("input", function (e) {
-        this.value = this.value.replace(/[^0-9\s\-+]/g, "")
-      })
+    location = window.location
+  }
 
+  useEffect(() => {
+    if (location !== null) {
       // Check URL parameters for success status
-      const searchParams = new URLSearchParams(window.location.search)
+      const searchParams = new URLSearchParams(location.search)
       if (searchParams.get("status") === "success") {
         setShowSuccessMessage(true)
       }
-    }, [location.search])
-  }
+    }
+  }, [])
+
+  useEffect(() => {
+    const handleInput = e => {
+      e.target.value = e.target.value.replace(/[^0-9\s\-+]/g, "")
+    }
+
+    const inputElement = phoneInput.current
+    inputElement.addEventListener("input", handleInput)
+
+    return () => {
+      inputElement.removeEventListener("input", handleInput)
+    }
+  }, [])
 
   return (
     <StyledSection>
