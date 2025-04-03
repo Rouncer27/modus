@@ -32,6 +32,9 @@ const DisplaySalesForce = ({ data }) => {
             name="first_name"
             size="20"
             type="text"
+            minlength="2"
+            maxlength="50"
+            required={true}
           />
           <br />
 
@@ -42,11 +45,21 @@ const DisplaySalesForce = ({ data }) => {
             name="last_name"
             size="20"
             type="text"
+            minlength="1"
+            maxlength="50"
+            required={true}
           />
           <br />
 
           <label htmlFor="email">Email</label>
-          <input id="email" maxLength="80" name="email" size="20" type="text" />
+          <input
+            id="email"
+            maxLength="80"
+            name="email"
+            size="20"
+            type="email"
+            required={true}
+          />
           <br />
 
           <label htmlFor="company">Company</label>
@@ -56,19 +69,36 @@ const DisplaySalesForce = ({ data }) => {
             name="company"
             size="20"
             type="text"
+            maxlength="100"
           />
           <br />
 
           <label htmlFor="city">City</label>
-          <input id="city" maxLength="40" name="city" size="20" type="text" />
+          <input
+            id="city"
+            maxLength="40"
+            name="city"
+            size="20"
+            type="text"
+            maxlength="50"
+          />
           <br />
 
           <label htmlFor="phone">Phone</label>
-          <input id="phone" maxLength="40" name="phone" size="20" type="text" />
+          <input
+            id="phone"
+            name="phone"
+            size="20"
+            type="tel"
+            pattern="^\+?[0-9][0-9\s-]{6,14}$"
+            minlength="7"
+            maxlength="15"
+            title="Enter a valid phone number with 7 to 15 digits, allowing spaces, dashes, and an optional leading plus sign."
+          />
           <br />
 
           <label htmlFor="description">Description</label>
-          <textarea name="description" rows={8}></textarea>
+          <textarea name="description" rows={8} maxlength="500"></textarea>
           <br />
 
           <input type="submit" name="submit" />
