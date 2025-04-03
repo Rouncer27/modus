@@ -12,11 +12,21 @@ const DisplaySalesForce = ({ data }) => {
   if (!data.display) return null
   const phoneInput = useRef(null)
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
+  const [hasMounted, setHasMounted] = useState(false)
+
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  if (!hasMounted) {
+    return null // Render nothing until the component has mounted
+  }
 
   useEffect(() => {
     phoneInput.current.addEventListener("input", function (e) {
       this.value = this.value.replace(/[^0-9\s\-+]/g, "")
     })
+
     // Check URL parameters for success status
     const searchParams = new URLSearchParams(window.location.search)
     if (searchParams.get("status") === "success") {
