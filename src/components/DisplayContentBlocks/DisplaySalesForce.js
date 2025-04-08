@@ -278,6 +278,13 @@ const StyledSection = styled.div`
     width: 100%;
   }
 
+  .g-recaptcha {
+    margin-top: 2rem;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+  }
+
   label {
     ${B2Black};
     display: block;
