@@ -42,8 +42,21 @@ const DisplaySalesForce = ({ data }) => {
     }
   }, [])
 
+  const handleSubmit = e => {
+    const captchaResponse = window.grecaptcha?.getResponse()
+    if (!captchaResponse) {
+      e.preventDefault()
+      alert("Please complete the reCAPTCHA to submit the form.")
+    }
+  }
+
   return (
     <StyledSection>
+      <script
+        src="https://www.google.com/recaptcha/api.js"
+        async
+        defer
+      ></script>
       <div className="wrapper">
         {showSuccessMessage && (
           <div className="success-message-modal">
@@ -60,9 +73,11 @@ const DisplaySalesForce = ({ data }) => {
             </div>
           </div>
         )}
+
         <form
           action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dau00000627Es"
           method="POST"
+          onSubmit={handleSubmit}
         >
           <input type="hidden" name="oid" value="00Dau00000627Es" />
           <input
@@ -70,6 +85,7 @@ const DisplaySalesForce = ({ data }) => {
             name="retURL"
             value="https://modus.ca/contact-us?status=success"
           />
+          <input type="hidden" name="lead_source" value="Web" />
 
           <label htmlFor="first_name">
             First Name <span className="required">&#42;</span>
@@ -111,18 +127,30 @@ const DisplaySalesForce = ({ data }) => {
           />
           <br />
 
-          <label htmlFor="company">Company</label>
+          <label htmlFor="company">
+            Company <span className="required">&#42;</span>
+          </label>
           <input
             id="company"
             name="company"
             size="20"
             type="text"
             maxLength="100"
+            required={true}
           />
           <br />
 
-          <label htmlFor="city">City</label>
-          <input id="city" name="city" size="20" type="text" maxLength="50" />
+          <label htmlFor="city">
+            City <span className="required">&#42;</span>
+          </label>
+          <input
+            id="city"
+            name="city"
+            size="20"
+            type="text"
+            maxLength="50"
+            required={true}
+          />
           <br />
 
           <label htmlFor="phone">
@@ -141,10 +169,34 @@ const DisplaySalesForce = ({ data }) => {
           />
           <br />
 
-          <label htmlFor="description">Description</label>
+          <label htmlFor="state_code">
+            State/Province <span className="required">&#42;</span> :
+          </label>
+          <select id="state_code" name="state_code" required={true}>
+            <option value="">--None--</option>
+            <option value="AB">Alberta</option>
+            <option value="BC">British Columbia</option>
+            <option value="SK">Saskatchewan</option>
+            <option value="MB">Manitoba</option>
+            <option value="ON">Ontario</option>
+            <option value="QC">Quebec</option>
+            <option value="PE">Prince Edward Island</option>
+            <option value="NB">New Brunswick</option>
+            <option value="NU">Nunavut</option>
+            <option value="NS">Nova Scotia</option>
+            <option value="NT">Northwest Territories</option>
+            <option value="YT">Yukon Territories</option>
+          </select>
+          <br />
+
+          <label htmlFor="description">Message/Inquiry</label>
           <textarea name="description" rows={8} maxLength="500"></textarea>
           <br />
 
+          <div
+            className="g-recaptcha"
+            data-sitekey="6Ldqkw4rAAAAAHTOoT_3Aw0AxYLDfE_MHKoxRyF0"
+          ></div>
           <input type="submit" name="submit" />
         </form>
       </div>
@@ -237,7 +289,8 @@ const StyledSection = styled.div`
     }
   }
   input,
-  textarea {
+  textarea,
+  select {
     display: block;
     margin-top: 0.25rem;
     margin-bottom: 0.5rem;
