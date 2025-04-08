@@ -52,11 +52,11 @@ const DisplaySalesForce = ({ data }) => {
 
   return (
     <StyledSection>
-      <script
+      {/* <script
         src="https://www.google.com/recaptcha/api.js"
         async
         defer
-      ></script>
+      ></script> */}
       <div className="wrapper">
         {showSuccessMessage && (
           <div className="success-message-modal">
@@ -77,7 +77,6 @@ const DisplaySalesForce = ({ data }) => {
         <form
           action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dau00000627Es"
           method="POST"
-          onSubmit={handleSubmit}
         >
           <input type="hidden" name="oid" value="00Dau00000627Es" />
           <input
@@ -193,10 +192,10 @@ const DisplaySalesForce = ({ data }) => {
           <textarea name="description" rows={8} maxLength="500"></textarea>
           <br />
 
-          <div
+          {/* <div
             className="g-recaptcha"
             data-sitekey="6Ldqkw4rAAAAAHTOoT_3Aw0AxYLDfE_MHKoxRyF0"
-          ></div>
+          ></div> */}
           <input type="submit" name="submit" />
         </form>
       </div>
