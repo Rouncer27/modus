@@ -151,6 +151,22 @@ const DisplaySalesForce = ({ data }) => {
           />
           <br />
 
+          <label htmlFor="phone">
+            Phone <span className="hint">(eg: +1-800-123-6789)</span>
+          </label>
+          <input
+            ref={phoneInput}
+            id="phone"
+            name="phone"
+            size="20"
+            type="tel"
+            pattern="^\+?[0-9][0-9\s-]{6,14}$"
+            minLength="7"
+            maxLength="15"
+            title="Enter a valid phone number with 7 to 15 digits, allowing spaces, dashes, and an optional leading plus sign."
+          />
+          <br />
+
           <label htmlFor="company">
             Company <span className="required">&#42;</span>
           </label>
@@ -174,22 +190,6 @@ const DisplaySalesForce = ({ data }) => {
             type="text"
             maxLength="50"
             required={true}
-          />
-          <br />
-
-          <label htmlFor="phone">
-            Phone <span className="hint">(eg: +1-800-123-6789)</span>
-          </label>
-          <input
-            ref={phoneInput}
-            id="phone"
-            name="phone"
-            size="20"
-            type="tel"
-            pattern="^\+?[0-9][0-9\s-]{6,14}$"
-            minLength="7"
-            maxLength="15"
-            title="Enter a valid phone number with 7 to 15 digits, allowing spaces, dashes, and an optional leading plus sign."
           />
           <br />
 
