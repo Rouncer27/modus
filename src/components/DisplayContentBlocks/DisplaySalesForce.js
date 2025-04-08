@@ -12,6 +12,7 @@ const DisplaySalesForce = ({ data }) => {
   if (!data.display) return null // Render nothing if display hasn't been checked yet.
 
   const phoneInput = useRef(null)
+  const recaptchaRef = useRef(null)
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
 
   let location = null
@@ -42,6 +43,29 @@ const DisplaySalesForce = ({ data }) => {
     }
   }, [])
 
+  useEffect(() => {
+    const script = document.createElement("script")
+    script.src =
+      "https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    script.async = true
+    script.defer = true
+    document.body.appendChild(script)
+
+    // Wait for the script to load before rendering reCAPTCHA
+    window.onloadCallback = () => {
+      if (window.grecaptcha && recaptchaRef.current) {
+        window.grecaptcha.render(recaptchaRef.current, {
+          sitekey: "6Ldqkw4rAAAAAHTOoT_3Aw0AxYLDfE_MHKoxRyF0", // Replace with your real site key
+        })
+      }
+    }
+
+    return () => {
+      document.body.removeChild(script) // Clean up on unmount
+    }
+  }, [])
+
+  // 2️⃣ Handle form submit with reCAPTCHA check
   const handleSubmit = e => {
     const captchaResponse = window.grecaptcha?.getResponse()
     if (!captchaResponse) {
@@ -75,6 +99,7 @@ const DisplaySalesForce = ({ data }) => {
         )}
 
         <form
+          onSubmit={handleSubmit}
           action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dau00000627Es"
           method="POST"
         >
@@ -192,10 +217,11 @@ const DisplaySalesForce = ({ data }) => {
           <textarea name="description" rows={8} maxLength="500"></textarea>
           <br />
 
-          {/* <div
+          <div
+            ref={recaptchaRef}
             className="g-recaptcha"
             data-sitekey="6Ldqkw4rAAAAAHTOoT_3Aw0AxYLDfE_MHKoxRyF0"
-          ></div> */}
+          ></div>
           <input type="submit" name="submit" />
         </form>
       </div>
