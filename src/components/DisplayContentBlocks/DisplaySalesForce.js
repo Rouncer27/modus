@@ -194,23 +194,23 @@ const DisplaySalesForce = ({ data }) => {
           />
           <br />
 
-          <label htmlFor="state_code">
+          <label htmlFor="state">
             State/Province <span className="required">&#42;</span> :
           </label>
-          <select id="state_code" name="state_code" required={true}>
+          <select id="state" name="state" required={true}>
             <option value="">--None--</option>
-            <option value="AB">Alberta</option>
-            <option value="BC">British Columbia</option>
-            <option value="SK">Saskatchewan</option>
-            <option value="MB">Manitoba</option>
-            <option value="ON">Ontario</option>
-            <option value="QC">Quebec</option>
-            <option value="PE">Prince Edward Island</option>
-            <option value="NB">New Brunswick</option>
-            <option value="NU">Nunavut</option>
-            <option value="NS">Nova Scotia</option>
-            <option value="NT">Northwest Territories</option>
-            <option value="YT">Yukon Territories</option>
+            <option value="Alberta">Alberta</option>
+            <option value="British Columbia">British Columbia</option>
+            <option value="Saskatchewan">Saskatchewan</option>
+            <option value="Manitoba">Manitoba</option>
+            <option value="Ontario">Ontario</option>
+            <option value="Quebec">Quebec</option>
+            <option value="Prince Edward Island">Prince Edward Island</option>
+            <option value="New Brunswick">New Brunswick</option>
+            <option value="Nunavut">Nunavut</option>
+            <option value="Nova Scotia">Nova Scotia</option>
+            <option value="Northwest Territories">Northwest Territories</option>
+            <option value="Yukon Territories">Yukon Territories</option>
           </select>
           <br />
 
