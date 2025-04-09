@@ -110,6 +110,7 @@ const DisplaySalesForce = ({ data }) => {
             value="https://modus.ca/contact-us?status=success"
           />
           <input type="hidden" name="lead_source" value="Web" />
+          <input type="hidden" name="country" value="Canada" />
 
           <label htmlFor="first_name">
             First Name <span className="required">&#42;</span>
