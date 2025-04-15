@@ -103,6 +103,11 @@ const DisplaySalesForce = ({ data }) => {
           action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dau00000627Es"
           method="POST"
         >
+          <input
+            type="hidden"
+            name="captcha_settings"
+            value='{"keyname":"Modus_API_Key_Pair","fallback":"true","orgId":"00Dau00000627Es","ts":""}'
+          ></input>
           <input type="hidden" name="oid" value="00Dau00000627Es" />
           <input
             type="hidden"
@@ -214,8 +219,14 @@ const DisplaySalesForce = ({ data }) => {
           </select>
           <br />
 
-          <label htmlFor="description">Message/Inquiry</label>
-          <textarea name="description" rows={8} maxLength="500"></textarea>
+          <label htmlFor="00Nau0000058etR">Message/Inquiry</label>
+          <textarea
+            id="00Nau0000058etR"
+            name="00Nau0000058etR"
+            rows="3"
+            type="text"
+            wrap="soft"
+          ></textarea>
           <br />
 
           <div
@@ -223,6 +234,7 @@ const DisplaySalesForce = ({ data }) => {
             className="g-recaptcha"
             data-sitekey="6Ldqkw4rAAAAAHTOoT_3Aw0AxYLDfE_MHKoxRyF0"
           ></div>
+
           <input type="submit" name="submit" />
         </form>
       </div>
