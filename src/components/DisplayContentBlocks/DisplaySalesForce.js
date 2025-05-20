@@ -10,6 +10,7 @@ import {
 
 const DisplaySalesForce = ({ data }) => {
   if (!data.display) return null // Render nothing if display hasn't been checked yet.
+  const [mathCheck, setMathCheck] = useState(0)
 
   const phoneInput = useRef(null)
   const recaptchaRef = useRef(null)
@@ -67,12 +68,25 @@ const DisplaySalesForce = ({ data }) => {
 
   // 2️⃣ Handle form submit with reCAPTCHA check
   const handleSubmit = e => {
+    if (mathCheck !== 7) {
+      e.preventDefault()
+      alert("Please complete the math Question correctly to submit the form.")
+      return
+    }
     const captchaResponse = window.grecaptcha?.getResponse()
     if (!captchaResponse) {
       e.preventDefault()
       alert("Please complete the reCAPTCHA to submit the form.")
     }
   }
+
+  const handleMathChange = e => {
+    console.log("e: ", e)
+    setMathCheck(parseInt(e.target.value))
+  }
+
+  console.log("mathCheck: ", mathCheck)
+  console.log(" if (mathCheck !== 7) return", mathCheck !== 7)
 
   return (
     <StyledSection>
@@ -216,6 +230,17 @@ const DisplaySalesForce = ({ data }) => {
 
           <label htmlFor="description">Message/Inquiry</label>
           <textarea name="description" rows={8} maxLength="500"></textarea>
+          <br />
+
+          <label for="math_check">What is 3 + 4?</label>
+          <input
+            type="text"
+            name="math_check"
+            required
+            onChange={e => {
+              handleMathChange(e)
+            }}
+          ></input>
           <br />
 
           <div
