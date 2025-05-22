@@ -11,6 +11,7 @@ import {
 const DisplaySalesForce = ({ data }) => {
   if (!data.display) return null // Render nothing if display hasn't been checked yet.
   const [mathCheck, setMathCheck] = useState(0)
+  const [honeypot, setHoneypot] = useState("")
 
   const phoneInput = useRef(null)
   const recaptchaRef = useRef(null)
@@ -68,6 +69,11 @@ const DisplaySalesForce = ({ data }) => {
 
   // 2️⃣ Handle form submit with reCAPTCHA check
   const handleSubmit = e => {
+    if (honeypot !== "") {
+      e.preventDefault()
+      return
+    }
+
     if (mathCheck !== 7) {
       e.preventDefault()
       alert("Please complete the math Question correctly to submit the form.")
@@ -81,12 +87,18 @@ const DisplaySalesForce = ({ data }) => {
   }
 
   const handleMathChange = e => {
-    console.log("e: ", e)
+    // console.log("e: ", e)
     setMathCheck(parseInt(e.target.value))
   }
 
-  console.log("mathCheck: ", mathCheck)
-  console.log(" if (mathCheck !== 7) return", mathCheck !== 7)
+  const handleHoneyPotChange = e => {
+    // console.log("e: ", e)
+    setHoneypot(e.target.value)
+  }
+
+  // console.log("mathCheck: ", mathCheck)
+  // console.log(" if (mathCheck !== 7) return", mathCheck !== 7)
+  // console.log("honey: ", honeypot)
 
   return (
     <StyledSection>
@@ -232,7 +244,7 @@ const DisplaySalesForce = ({ data }) => {
           <textarea name="description" rows={8} maxLength="500"></textarea>
           <br />
 
-          <label for="math_check">What is 3 + 4?</label>
+          <label htmlFor="math_check">What is 3 + 4?</label>
           <input
             type="text"
             name="math_check"
@@ -242,6 +254,17 @@ const DisplaySalesForce = ({ data }) => {
             }}
           ></input>
           <br />
+
+          <div style={{ display: "block" }}>
+            <label>Leave this field empty</label>
+            <input
+              type="text"
+              name="honeypot"
+              value={honeypot}
+              onChange={handleHoneyPotChange}
+              autoComplete="off"
+            />
+          </div>
 
           <div
             ref={recaptchaRef}
