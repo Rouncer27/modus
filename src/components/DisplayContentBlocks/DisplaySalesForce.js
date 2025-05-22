@@ -255,7 +255,7 @@ const DisplaySalesForce = ({ data }) => {
           ></input>
           <br />
 
-          <div style={{ display: "block" }}>
+          <div style={{ display: "none" }}>
             <label>Leave this field empty</label>
             <input
               type="text"
