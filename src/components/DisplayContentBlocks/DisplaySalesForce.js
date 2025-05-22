@@ -255,11 +255,12 @@ const DisplaySalesForce = ({ data }) => {
           ></input>
           <br />
 
-          <div style={{ display: "none" }}>
+          <div className="open-field">
             <label>Leave this field empty</label>
             <input
               type="text"
               name="honeypot"
+              tabIndex="-1"
               value={honeypot}
               onChange={handleHoneyPotChange}
               autoComplete="off"
@@ -326,6 +327,11 @@ const StyledSection = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+  }
+
+  .open-field {
+    position: absolute;
+    left: -99999999px;
   }
 
   .g-recaptcha {
