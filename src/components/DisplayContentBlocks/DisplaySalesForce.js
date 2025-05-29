@@ -7,9 +7,17 @@ import {
   B1Black,
   BtnPrimaryGreen,
 } from "../../styles/helpers"
+// ADDED NOW
+const MIN_FILL_TIME = 3000
+// ADDED NOW
 
 const DisplaySalesForce = ({ data }) => {
   if (!data.display) return null // Render nothing if display hasn't been checked yet.
+
+  // ADDED NOW
+  const formStartTimeRef = useRef(Date.now())
+  // ADDED NOW
+
   const [mathCheck, setMathCheck] = useState(0)
   const [honeypot, setHoneypot] = useState("")
 
@@ -18,9 +26,25 @@ const DisplaySalesForce = ({ data }) => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
 
   let location = null
+
   if (typeof window !== "undefined") {
     location = window.location
   }
+
+  const formRef = useRef(null)
+  // ADDED NOW
+  useEffect(() => {
+    if (formRef.current) {
+      const formEl = formRef.current
+      // Inject only after JS runs
+      formEl.setAttribute(
+        "action",
+        "https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dau00000627Es"
+      )
+      formEl.setAttribute("method", "POST")
+    }
+  }, [])
+  // ADDED NOW
 
   useEffect(() => {
     if (location !== null) {
@@ -69,6 +93,15 @@ const DisplaySalesForce = ({ data }) => {
 
   // 2️⃣ Handle form submit with reCAPTCHA check
   const handleSubmit = e => {
+    // ADDED NOW
+    const elapsed = Date.now() - formStartTimeRef.current
+    if (elapsed < MIN_FILL_TIME) {
+      e.preventDefault()
+      console.warn(`Form submitted too quickly (${elapsed}ms)—likely a bot.`)
+      return
+    }
+    // ADDED NOW
+
     if (honeypot !== "") {
       e.preventDefault()
       return
@@ -124,11 +157,7 @@ const DisplaySalesForce = ({ data }) => {
           </div>
         )}
 
-        <form
-          onSubmit={handleSubmit}
-          action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dau00000627Es"
-          method="POST"
-        >
+        <form ref={formRef} onSubmit={handleSubmit}>
           <input type="hidden" name="oid" value="00Dau00000627Es" />
           <input
             type="hidden"
