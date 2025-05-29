@@ -8,7 +8,7 @@ import {
   BtnPrimaryGreen,
 } from "../../styles/helpers"
 // ADDED NOW
-const MIN_FILL_TIME = 3000
+const MIN_FILL_TIME = 6000
 // ADDED NOW
 
 const DisplaySalesForce = ({ data }) => {
@@ -34,15 +34,18 @@ const DisplaySalesForce = ({ data }) => {
   const formRef = useRef(null)
   // ADDED NOW
   useEffect(() => {
-    if (formRef.current) {
-      const formEl = formRef.current
-      // Inject only after JS runs
-      formEl.setAttribute(
-        "action",
-        "https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dau00000627Es"
-      )
-      formEl.setAttribute("method", "POST")
-    }
+    const timer = setTimeout(() => {
+      if (formRef.current) {
+        const formEl = formRef.current
+        // Inject only after JS runs
+        formEl.setAttribute(
+          "action",
+          "https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dau00000627Es"
+        )
+        formEl.setAttribute("method", "POST")
+      }
+    }, 3000) // 3000 ms delay
+    return () => clearTimeout(timer)
   }, [])
   // ADDED NOW
 
