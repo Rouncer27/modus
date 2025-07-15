@@ -7,7 +7,7 @@ const TopNav = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [btnChecked, setBtnChecked] = useState(false)
   return (
-    <div>
+    <MobileMenu>
       <TopNavButton
         setIsOpen={setIsOpen}
         btnChecked={btnChecked}
@@ -19,9 +19,15 @@ const TopNav = () => {
         setBtnChecked={setBtnChecked}
       />
       {!!isOpen && <BlurBackground />}
-    </div>
+    </MobileMenu>
   )
 }
+
+const MobileMenu = styled.div`
+  @media (min-width: 768px) {
+    display: none;
+  }
+`
 
 const BlurBackground = styled.div`
   position: fixed;

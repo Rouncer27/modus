@@ -58,3 +58,22 @@ export const B3White = css`
   ${B3Base};
   color: ${colors.white};
 `
+
+// Body copy FOUR //
+export const B4Base = css`
+  ${fontSizer(1, 1.8, 76.8, 150, 1)};
+  font-family: ${fonts.fontPrimary};
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+`
+export const B4Black = css`
+  ${B4Base};
+  color: ${colors.black};
+`
+export const B4White = css`
+  ${B4Base};
+  color: ${colors.white};
+`

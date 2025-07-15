@@ -15,12 +15,11 @@ const InputField = ({
   type,
   nameId,
   required,
-  french,
 }) => {
   return (
     <InputFieldStyled size={size} position={position}>
       <label htmlFor={nameId}>
-        {french ? titleFr : title} <span className="required">&#42;</span>
+        {title} <span className="required">&#42;</span>
         <span
           className={`error-message ${
             errors.findIndex(error => error.idref === nameId) !== -1 &&

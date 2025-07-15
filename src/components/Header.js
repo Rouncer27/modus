@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { BigWrapper, colors } from "../styles/helpers"
 import MainLogo from "./Logos/MainLogo"
 import TopNav from "./Navigation/TopNav"
+import HeaderMenu from "./Navigation/HeaderNav/HeaderMenuMain"
 
 const Header = ({ siteTitle }) => {
   return (
@@ -17,6 +18,9 @@ const Header = ({ siteTitle }) => {
             </Link>
           </h1>
         </div>
+        <div className="site-menu">
+          <HeaderMenu />
+        </div>
       </div>
       <TopNav />
     </StyledHeader>
@@ -24,20 +28,28 @@ const Header = ({ siteTitle }) => {
 }
 
 const StyledHeader = styled.header`
-  position: absolute;
+  /* position: absolute;
   top: 0;
   right: 0;
   left: 0;
-  width: 100%;
+  width: 100%; */
+  background-color: #fff;
   z-index: 999999;
 
   .wrapper {
     ${BigWrapper};
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
   }
 
   .site-logo {
     width: 25rem;
+    margin: 0 auto 3rem;
+
+    @media (min-width: 1200px) {
+      width: 25rem;
+      margin: 0 auto;
+    }
 
     a {
       display: block;
@@ -57,6 +69,23 @@ const StyledHeader = styled.header`
         position: absolute;
         left: -999%;
       }
+    }
+  }
+
+  .site-menu {
+    position: relative;
+    display: none;
+    background-color: #fff;
+    width: calc(100% - 25rem);
+    z-index: 999999999999999999;
+
+    @media (min-width: 768px) {
+      display: block;
+      width: calc(100%);
+    }
+
+    @media (min-width: 1200px) {
+      width: calc(100% - 25rem);
     }
   }
 `
