@@ -12,10 +12,8 @@ exports.onRenderBody = ({
   setHeadComponents,
   setPostBodyComponents,
 }) => {
-  // keep your existing lang attribute ✅
   setHtmlAttributes({ lang: `en` })
 
-  // 🔵 Added tracking script to <head>
   setHeadComponents([
     <script
       key="groupcreative365-script"
@@ -23,8 +21,6 @@ exports.onRenderBody = ({
       src="https://www.groupcreative365.com/js/806860.js"
     />,
   ])
-
-  // 🔵 Added <noscript> fallback to <body>
   setPostBodyComponents([
     <noscript key="groupcreative365-noscript">
       <img
