@@ -17,6 +17,7 @@ const BaseWysiwyg = ({ data }) => {
 
 const StyledSection = styled.section`
   width: 100%;
+
   margin-right: auto;
   margin-left: auto;
 
@@ -68,11 +69,26 @@ const StyledSection = styled.section`
   }
 
   iframe {
+    display: block;
     width: 100%;
-    min-height: 35rem;
+    max-width: 100rem !important;
+    margin: 0 auto;
+    height: 24rem !important;
+    min-height: 24rem !important;
 
     @media (min-width: 768px) {
-      min-height: 55vw;
+      height: 55vw !important;
+      min-height: 55vw !important;
+    }
+
+    @media (min-width: 900px) {
+      height: 52vw !important;
+      min-height: 52vw !important;
+    }
+
+    @media (min-width: 1025px) {
+      height: 55.5rem !important;
+      min-height: 55.5rem !important;
     }
   }
 `
