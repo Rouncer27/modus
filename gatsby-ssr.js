@@ -8,25 +8,11 @@ exports.onRenderBody = ({
   // keep your existing lang attribute
   setHtmlAttributes({ lang: `en` })
 
-  // tracking script in <head>
-  // setHeadComponents([
-  //   React.createElement("script", {
-  //     key: "groupcreative365-script",
-  //     type: "text/javascript",
-  //     src: "https://www.groupcreative365.com/js/806860.js",
-  //   }),
-  // ])
-
-  // noscript fallback in <body>
-  // setPostBodyComponents([
-  //   React.createElement(
-  //     "noscript",
-  //     { key: "groupcreative365-noscript" },
-  //     React.createElement("img", {
-  //       alt: "",
-  //       src: "https://www.groupcreative365.com/806860.png",
-  //       style: { display: "none" },
-  //     })
-  //   ),
-  // ])
+  setHeadComponents([
+    <script
+      key="salesforce-c360a"
+      type="text/javascript"
+      src="https://cdn.c360a.salesforce.com/beacon/c360a/af68d388-4238-453b-94fb-a53732eeee10/scripts/c360a.min.js?wtcp_id=1NDOL0000000BRh4AM"
+    />,
+  ])
 }
