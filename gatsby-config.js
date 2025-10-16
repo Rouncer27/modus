@@ -44,15 +44,15 @@ module.exports = {
       },
     },
     `gatsby-plugin-sitemap`,
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: ["G-EE3RYQ44DY"],
-      },
-      pluginConfig: {
-        head: true,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-gtag`,
+    //   options: {
+    //     trackingIds: ["G-EE3RYQ44DY"],
+    //   },
+    //   pluginConfig: {
+    //     head: true,
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
