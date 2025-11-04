@@ -70,7 +70,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-netlify`,
       options: {
-        mergeSecurityHeaders: false,
+        mergeSecurityHeaders: true,
         headers: {
           "/*": [
             "cache-control: public,max-age=60",
