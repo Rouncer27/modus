@@ -67,7 +67,8 @@ module.exports = {
         siteUrl: `https://modus.ca/`,
       },
     },
-     resolve: `gatsby-plugin-netlify`,
+    {
+      resolve: `gatsby-plugin-netlify`,
       options: {
         mergeSecurityHeaders: false,
         headers: {
@@ -82,5 +83,6 @@ module.exports = {
           ],
         },
       },
+    },
   ],
 }
