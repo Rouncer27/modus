@@ -67,23 +67,6 @@ module.exports = {
         siteUrl: `https://modus.ca/`,
       },
     },
-    {
-      resolve: `gatsby-plugin-netlify`,
-      options: {
-        mergeSecurityHeaders: true,
-        headers: {
-          "/*": [
-            "cache-control: public,max-age=60",
-            // "X-Frame-Options: SAMEORIGIN",
-            "X-XSS-Protection: 1; mode=block",
-            "X-Content-Type-Options: nosniff",
-            "Feature-Policy: camera 'none'; geolocation 'none'; microphone 'none'",
-            "strict-transport-security: max-age=31536000",
-            "Referrer-Policy: strict-origin-when-cross-origin",
-            "Content-Security-Policy: frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com;",
-          ],
-        },
-      },
-    },
+    `gatsby-plugin-netlify`,
   ],
 }
